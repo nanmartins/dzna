@@ -1,5 +1,5 @@
 <template>
-  <v-container class="fill-height">
+  <v-container class="fill-height" :color="dark">
     <v-responsive class="align-center text-center fill-height">
       <v-img height="300" src="@/assets/logo.svg" />
 
@@ -71,5 +71,8 @@
 </template>
 
 <script setup>
-  //
+  ////////////////////////////////////////// ~~~
+  // @/default/file.vue will be the main layout, rendering @/views inside, which will formed by @/components
+// doing so i can use the v-app component as "top-level/parent" of files at @/components
+
 </script>
