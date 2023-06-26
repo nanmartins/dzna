@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar flat color="grey-darken-4" style="position: relative;">
+  <v-app-bar flat color="#17130E" style="position: relative;">
 
     <v-container width="80vw" class="d-flex justify-space-between px-10">
 

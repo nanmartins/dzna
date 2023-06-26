@@ -1,6 +1,6 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import { useLayout } from 'vuetify/lib/framework.mjs'
+// import { useLayout } from 'vuetify/lib/framework.mjs'
 
 const routes = [
   {

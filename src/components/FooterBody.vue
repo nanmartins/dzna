@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="bg-grey-darken-4" style="top: 50px;">
+  <v-footer color="#1F1B16" style="top: 50px;">
     <v-row justify="center" no-gutters>
 
       <v-btn
