@@ -6,20 +6,24 @@
     permanent
     absolute
     @click="rail = !rail"
-    style="height: fit-content; top: 56px;"
+    color="#1F1B16"
+    style="height: fit-content; top: 56px; border: none"
   >
     <v-list-item
       prepend-icon="mdi:mdi-menu"
       nav
+      style="padding-left: 15px"
     >
-      <template v-slot:append>
+      <!-- <template v-slot:append>
         <v-btn
           variant="text"
           @click.stop="rail = !rail"
+          style="border: 1px solid green;"
         >
           <v-icon icon="mdi:mdi-menu" size="24" color="grey"></v-icon>
         </v-btn>
-      </template>
+      </template> -->
+
     </v-list-item>
 
       <!-- <v-divider></v-divider> -->
@@ -28,6 +32,10 @@
       <v-list-item prepend-icon="mdi-home-city" title="Home" value="home"></v-list-item>
       <v-list-item prepend-icon="mdi-account" title="My Account" value="account"></v-list-item>
       <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
+      <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
+      <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
+      <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
+
     </v-list>
   </v-navigation-drawer>
 
