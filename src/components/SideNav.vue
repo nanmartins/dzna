@@ -5,15 +5,13 @@
     border="none"
     color="#1F1B16"
     permanent
-    absolute
     @click="rail = !rail"
     style="height: fit-content;"
-    class="py-4"
+    class="py-4 rounded-be-xl"
   >
     <v-list-item
       prepend-icon="mdi:mdi-menu"
       :width="24"
-      nav
       class="pl-4 py-6"
     >
     </v-list-item>

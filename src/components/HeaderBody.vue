@@ -1,14 +1,22 @@
 <template>
   <v-app-bar flat color="#17130E" :height="56">
 
-    <v-container class="d-flex justify-space-between align-center px-10" :height="56">
+    <v-container
+      :height="55"
+      width="75vw"
+      class="d-flex justify-space-between align-center px-10 py-0"
+    >
 
       <router-link to="/" class="text-white text-decoration-none px-8">
         <v-app-bar-title>Navbar</v-app-bar-title>
       </router-link>
 
-      <v-btn variant="text" class="mx-2">
-        <v-icon icon="mdi:mdi-account-circle-outline" size="24" color="grey"></v-icon>
+      <v-btn variant="text" class="mr-2">
+        <v-icon
+          icon="mdi:mdi-account-circle-outline"
+          size="24"
+          color="grey-lighten-1"
+        ></v-icon>
       </v-btn>
 
 
