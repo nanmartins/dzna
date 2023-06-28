@@ -1,7 +1,7 @@
 <template>
-  <v-app-bar flat color="#17130E" style="position: relative; height: 56px">
+  <v-app-bar flat color="#17130E" :height="56">
 
-    <v-container width="80vw" class="d-flex justify-space-between px-10">
+    <v-container class="d-flex justify-space-between align-center px-10" :height="56">
 
       <router-link to="/" class="text-white text-decoration-none px-8">
         <v-app-bar-title>Navbar</v-app-bar-title>
@@ -19,8 +19,5 @@
 </template>
 
 <script setup>
-  ////////////////////////////////////////// ~~~
-  // @/default/file.vue will be the main layout, rendering @/views inside, which will formed by @/components
-// doing so i can use the v-app component as "top-level/parent" of files at @/components
 
 </script>

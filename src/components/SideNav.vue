@@ -2,73 +2,34 @@
   <v-navigation-drawer
     v-model="drawer"
     :rail="rail"
-    variant="plain"
+    border="none"
+    color="#1F1B16"
     permanent
     absolute
     @click="rail = !rail"
-    color="#1F1B16"
-    style="height: fit-content; top: 56px; border: none"
+    style="height: fit-content;"
+    class="py-4"
   >
     <v-list-item
       prepend-icon="mdi:mdi-menu"
+      :width="24"
       nav
-      style="padding-left: 15px"
+      class="pl-4 py-6"
     >
-      <!-- <template v-slot:append>
-        <v-btn
-          variant="text"
-          @click.stop="rail = !rail"
-          style="border: 1px solid green;"
-        >
-          <v-icon icon="mdi:mdi-menu" size="24" color="grey"></v-icon>
-        </v-btn>
-      </template> -->
-
     </v-list-item>
 
-      <!-- <v-divider></v-divider> -->
-
     <v-list density="compact" nav>
-      <v-list-item prepend-icon="mdi-home-city" title="Home" value="home"></v-list-item>
-      <v-list-item prepend-icon="mdi-account" title="My Account" value="account"></v-list-item>
-      <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
-      <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
-      <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
-      <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
+      <v-list-item prepend-icon="mdi:mdi-home" title="Inicio" value="home" color="grey"></v-list-item>
+      <v-list-item prepend-icon="mdi:mdi-calendar" title="Concursos" value="concursos"></v-list-item>
+      <v-list-item prepend-icon="mdi:mdi-minus" title="Ganhadores" value="ganhadores"></v-list-item>
+      <v-list-item prepend-icon="mdi:mdi-minus" title="Regulamento" value="regulamento"></v-list-item>
+      <v-list-item prepend-icon="mdi:mdi-minus" title="Perguntas Frequentes" value="perguntas"></v-list-item>
+      <v-list-item prepend-icon="mdi:mdi-minus" title="Contatos" value="contato"></v-list-item>
+      <v-list-item prepend-icon="mdi:mdi-minus" title="Entrar" value="entrar"></v-list-item>
 
     </v-list>
+
   </v-navigation-drawer>
-
-
-
-
-
-
-
-
-  <!-- <v-navigation-drawer
-    expand-on-hover
-    rail
-    absolute
-    floating
-    color="#1F1B16"
-  >
-    <v-list>
-      <v-list-item
-        prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
-        title="Sandra Adams"
-        subtitle="sandra_a88@gmailcom"
-      ></v-list-item>
-    </v-list> -->
-
-    <!-- <v-divider></v-divider> -->
-
-    <!-- <v-list density="compact" nav>
-      <v-list-item prepend-icon="mdi-folder" title="My Files" value="myfiles"></v-list-item>
-      <v-list-item prepend-icon="mdi-account-multiple" title="Shared with me" value="shared"></v-list-item>
-      <v-list-item prepend-icon="mdi-star" title="Starred" value="starred"></v-list-item>
-    </v-list>
-  </v-navigation-drawer> -->
 </template>
 
 <script>

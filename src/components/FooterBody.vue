@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="#1F1B16" style="top: 50px;">
+  <v-footer color="#17130E">
     <v-row justify="center" no-gutters>
 
       <v-btn
@@ -11,7 +11,7 @@
         {{ link }}
       </v-btn>
 
-      <v-col class="text-center mt-4" cols="12">
+      <v-col class="text-center mt-4 text-white" cols="12">
         {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
       </v-col>
 
@@ -28,8 +28,4 @@
       }
     }
   }
-  ////////////////////////////////////////// ~~~
-  // @/default/file.vue will be the main layout, rendering @/views inside, which will formed by @/components
-// doing so i can use the v-app component as "top-level/parent" of files at @/components
-
 </script>
