@@ -1,37 +1,21 @@
 <template>
-  <v-footer color="#17130E">
+  <v-footer color="#17130E" class="py-0">
 
     <v-container
       width="75vw"
       class="d-flex justify-center align-center px-10 py-0"
     >
-
-      <!-- <v-row justify="center" no-gutters> -->
-
-        <!-- <v-btn
-          v-for="link in links"
-          :key="link"
-          variant="text"
-          class="mx-2 text-white"
-        >
-          {{ link }}
-        </v-btn> -->
-
-        <!-- <v-col>
-
-        </v-col> -->
-
-      <!-- ////////////////  FOOTER TOP  /////////////////////  -->
-      <v-row>
+      <!-- //////////////////////   FOOTER TOP  //////////////////////////// -->
+      <v-row class="pa-0 ma-0">
         <v-col class="d-flex flex-fill justify-center py-8">
 
           <div class="d-flex flex-row pa-0 ma-0">
-            <div class="d-flex flex-row pa-0 ma-0">
+            <!-- <div class="d-flex flex-row pa-0 ma-0"> -->
               <v-img src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687985658/footer-pix-logo_mt4hpg.png"></v-img>
-            </div>
-            <div class="d-flex flex-row pa-0 ma-0 ml-2">
-              <v-img src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687985674/foooter-pix_juit9t.png"></v-img>
-            </div>
+            <!-- </div> -->
+            <!-- <div class="d-flex flex-row pa-0 ma-0 ml-2"> -->
+              <v-img src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687985674/foooter-pix_juit9t.png" class="ml-2"></v-img>
+            <!-- </div> -->
           </div>
 
           <div class="d-flex flex-row pa-0 ma-0 ml-8">
@@ -48,14 +32,20 @@
         <v-divider :thickness="2" color="#ffffff"></v-divider>
 
 
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
 
         </div>
         <v-col class="d-flex flex-fill text-center mt-4 text-white" cols="12">
           {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-        </v-col>
+        </v-col> -->
+
+
+      <!-- /////////////////////   FOOTER BOTTOM  ////////////////////// -->
+
+      <FooterBottom />
 
       </v-row>
+
 
     </v-container>
 
@@ -65,16 +55,17 @@
 </template>
 
 <script>
-
-  import footerPixLogo from '@/src/assets/footer-pix-logo.png'
-  import footerPix from '@/src/assets/footer-pix.png'
+import FooterBottom from '@/components/footer/FooterBottom.vue'
 
   export default {
+    name: 'FooterBody',
+    components: {
+      FooterBottom
+    },
     data() {
       return {
         links: ['Sobre', 'Contato', 'Endereco'],
-        pix01: footerPixLogo,
-        pix02: footerPix
+        // date: new Date(),
       }
     }
   }

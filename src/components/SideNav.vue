@@ -24,7 +24,6 @@
       <v-list-item prepend-icon="mdi:mdi-minus" title="Perguntas Frequentes" value="perguntas"></v-list-item>
       <v-list-item prepend-icon="mdi:mdi-minus" title="Contatos" value="contato"></v-list-item>
       <v-list-item prepend-icon="mdi:mdi-minus" title="Entrar" value="entrar"></v-list-item>
-
     </v-list>
 
   </v-navigation-drawer>
