@@ -29,7 +29,7 @@
         </v-col>
 
         <!-- //////////////////////   DIVIDER  ////////////////// -->
-        <v-divider :thickness="2" color="#ffffff"></v-divider>
+        <v-divider :thickness="2" class="mx-12"></v-divider>
 
 
         <!-- <div class="d-flex flex-column">

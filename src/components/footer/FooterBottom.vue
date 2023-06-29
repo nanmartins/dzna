@@ -1,6 +1,6 @@
 <template>
 
-  <v-row class="pa-0 ma-0 py-10">
+  <v-row class="pa-0 ma-0 py-10 px-12" width="70vw">
     <v-col cols="3" class="pa-0 ma-0">
       <!-- Coluna da esquerda -->
       <v-card class="column-left" outlined  color="#17130E">
@@ -38,8 +38,11 @@
           <!-- </v-card> -->
 
           <v-card color="#17130E">
-            <v-icon size="40px" color="yellow-darken-2" icon="mdi:mdi-toggle-switch"></v-icon>
-            <icon></icon>
+            <v-icon
+              icon="mdi:mdi-toggle-switch"
+              color="yellow-darken-2"
+              :size="45"
+            ></v-icon>
           </v-card>
 
         </div>
