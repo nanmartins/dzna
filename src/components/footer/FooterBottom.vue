@@ -9,7 +9,7 @@
       <div>
         <!-- FOOTER LOGO -->
       <!-- <v-card class="px-0 py-0" color="#17130E"> -->
-        <v-card-title class="px-0 py-0 text-h4">Footer</v-card-title>
+        <v-card-title class="px-0 py-0 mb-8 text-h4">Footer</v-card-title>
       <!-- </v-card> -->
 
           <!-- FOOTER TIME / LANGUAGE -->
@@ -22,8 +22,8 @@
             </v-card-text>
           <!-- </v-card> -->
 
-          <v-card flat color="#17130E">
-            <v-row class="d-flex flex-row py-2 px-0 mx-0 align-center" width="250px">
+          <!-- <v-card flat color="#17130E"> -->
+            <v-row class="d-flex flex-row py-2 px-0 mx-0 mb-8 align-center" width="250px">
 
               <v-img
                 :height="40"
@@ -35,10 +35,10 @@
               <v-card-text class="text-h6 px-0 ma-0 pl-2">Português</v-card-text>
 
             </v-row>
-          </v-card>
+          <!-- </v-card> -->
 
           <v-card color="#17130E">
-            <v-icon :elevation="0"  color="yellow-darken-2" icon="mdi:mdi-toggle-switch"></v-icon>
+            <v-icon size="40px" color="yellow-darken-2" icon="mdi:mdi-toggle-switch"></v-icon>
             <icon></icon>
           </v-card>
 
