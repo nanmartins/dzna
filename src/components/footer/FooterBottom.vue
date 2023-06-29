@@ -1,73 +1,100 @@
 <template>
 
-  <v-row class="pa-0 ma-0 py-8">
+  <v-row class="pa-0 ma-0 py-10">
+    <v-col cols="3" class="pa-0 ma-0">
+      <!-- Coluna da esquerda -->
+      <v-card class="column-left" outlined  color="#17130E">
+        <!-- Conteúdo da coluna da esquerda -->
 
-        <!-- ////// FOOTER BOTTOM - LEFT ////// -->
-        <div width="250px" class="d-flex flex-column px-0">
-
-          <!-- FOOTER LOGO -->
-          <v-card class="px-0 py-0" color="#17130E">
-            <v-card-title class="px-0 py-0">Footer</v-card-title>
-          </v-card>
+      <div>
+        <!-- FOOTER LOGO -->
+      <!-- <v-card class="px-0 py-0" color="#17130E"> -->
+        <v-card-title class="px-0 py-0 text-h4">Footer</v-card-title>
+      <!-- </v-card> -->
 
           <!-- FOOTER TIME / LANGUAGE -->
-          <div class="d-flex flex-column">
+        <div class="d-flex flex-column">
 
-            <v-card color="#17130E" class="d-flex px-0 mx-0">
-              <v-card-text flat class="px-0">
-                {{ `Horário local: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}  GMT ${-date.getTimezoneOffset() / 60 >= 0 ? ' +' : ' '}${-date.getTimezoneOffset() / 60} `}}
-                <!-- {{ date.toUTCString() }} -->
-              </v-card-text>
-            </v-card>
+          <!-- <v-card color="#17130E" class="d-flex px-0 mx-0"> -->
+            <v-card-text flat class="px-0 text-caption">
+              Horário local: {{ liveTime }}
+              <!-- {{ `Horário local: ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}  GMT ${-date.getTimezoneOffset() / 60 >= 0 ? ' +' : ' '}${-date.getTimezoneOffset() / 60} `}} -->
+            </v-card-text>
+          <!-- </v-card> -->
 
-            <v-card flat color="#17130E" class="d-flex justify-start">
-              <v-row class="d-flex flex-row py-2 px-0 mx-0 align-center" width="250px">
-
-                <v-img
-                  :height="40"
-                  :width="54"
-                  inline
-                  class="px-0 mx-0"
-                  src="https://res.cloudinary.com/dpskrziq1/image/upload/c_crop/v1687996011/Brazil_pf2dtv.png"
-                ></v-img>
-                <v-card-text class="text-h6 px-0 ma-0 pl-2">Português</v-card-text>
-
-              </v-row>
-            </v-card>
-
-          </div>
-
-          <!-- FOOTER SWTICH -->
           <v-card flat color="#17130E">
-            <v-icon color="yellow-darken-2" icon="mdi:mdi-toggle-switch"></v-icon>
+            <v-row class="d-flex flex-row py-2 px-0 mx-0 align-center" width="250px">
+
+              <v-img
+                :height="40"
+                :width="45"
+                inline
+                class="px-0 mx-0"
+                src="https://res.cloudinary.com/dpskrziq1/image/upload/c_crop/v1687996011/Brazil_pf2dtv.png"
+              ></v-img>
+              <v-card-text class="text-h6 px-0 ma-0 pl-2">Português</v-card-text>
+
+            </v-row>
+          </v-card>
+
+          <v-card color="#17130E">
+            <v-icon :elevation="0"  color="yellow-darken-2" icon="mdi:mdi-toggle-switch"></v-icon>
+            <icon></icon>
           </v-card>
 
         </div>
 
+      </div>
+      </v-card>
+    </v-col>
+
+    <v-col min-width="400px" class="pa-0 ma-0">
+      <!-- Coluna central -->
+      <v-card flat class="column-center" color="#17130E" outlined>
+        <!-- Conteúdo da coluna central -->
+
         <!-- ////// FOOTER BOTTOM - MID ////// -->
-        <v-col class="px-4">
-          <v-card flat color="#17130E">
-            <v-card-text class="max-w-md">
+        <!-- <v-col class="px-4 py-0 my-0"> -->
+          <!-- <v-card flat color="#17130E"> -->
+            <v-card-text class="py-0 text-body-1 font-weight-light text-start">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis delectus praesentium error numquam aut amet laudantium deleniti non dignissimos laboriosam, doloribus dolorem excepturi facilis nesciunt! Ad sunt dolore temporibus eaque?
             </v-card-text>
 
-            <v-card-text>
+            <v-card-text color="#616161" class="text-body-1 font-weight-light text-start">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non perspiciatis aliquid veritatis tempora! Dolorum, officia! Ut quo fugit voluptatibus facere maxime ab eaque voluptates, natus dolores voluptas! Quis, aspernatur quasi!
             </v-card-text>
 
-            <v-card-text>
+            <v-card-text class="text-body-1 font-weight-light text-start">
               Mauris est egestas malesuada gidnissim nam.
             </v-card-text>
 
-          </v-card>
+          <!-- </v-card> -->
 
-        </v-col>
+        <!-- </v-col> -->
 
-        <!-- ////// FOOTER BOTTOM RIGHT ////// -->
+      </v-card>
+    </v-col>
+
+    <v-col cols="3" class="pa-0 ma-0">
+      <!-- Coluna da direita -->
+      <v-card flat class="column-right" color="#17130E" outlined>
+        <!-- Conteúdo da coluna da direita -->
+
         <div width="250px">
-          Lorem ipsum
+          <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0">Lorem Ipsum</v-card-text>
+          <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0">Lorem Ipsum</v-card-text>
+          <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0">Lorem Ipsum</v-card-text>
+          <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0">Lorem Ipsum</v-card-text>
+          <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0">Lorem Ipsum</v-card-text>
+
         </div>
-      </v-row>
+
+      </v-card>
+    </v-col>
+  </v-row>
+
+
+
 
 </template>
 
@@ -78,7 +105,23 @@ export default {
   data() {
     return {
       date: new Date(),
+      liveTime: '',
     }
-  }
+  },
+  mounted() {
+    this.updateTime()
+    setInterval(this.updateTime, 1000)
+  },
+  methods: {
+    updateTime() {
+      const date = new Date()
+      const hours = String(date.getHours()).padStart(2, '0')
+      const minutes = String(date.getMinutes()).padStart(2, '0')
+      const seconds = String(date.getSeconds()).padStart(2, '0')
+      const timeZoneSet = -date.getTimezoneOffset() / 60
+      const timeZoneOp = timeZoneSet >= 0 ? ' +' : ' '
+      this.liveTime = `${hours}:${minutes}:${seconds}  GMT${timeZoneOp + timeZoneSet}`
+    }
+  },
 }
 </script>
