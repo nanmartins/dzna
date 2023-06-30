@@ -1,5 +1,4 @@
 <template>
-
   <v-row class="pa-0 ma-0 py-10 px-12" width="70vw">
 
     <v-col cols="3" class="pa-0 ma-0">
@@ -17,8 +16,11 @@
               Horário local: {{ liveTime }}
             </v-card-text>
 
-            <v-row class="d-flex flex-row py-2 px-0 mx-0 mb-8 align-center" width="250px">
-
+            <!-- <v-card flat color="#17130E"> -->
+            <v-row
+              class="d-flex flex-row py-2 px-0 mx-0 mb-8 align-center"
+              width="250px"
+            >
               <v-img
                 :width="40"
                 inline
@@ -26,7 +28,6 @@
                 src="https://res.cloudinary.com/dpskrziq1/image/upload/c_crop/v1687996011/Brazil_pf2dtv.png"
               ></v-img>
               <v-card-text class="text-h6 px-0 ma-0 pl-2">Português</v-card-text>
-
             </v-row>
 
         </div>
@@ -66,7 +67,6 @@
 
           <!-- </v-card> -->
         <!-- </v-col> -->
-
       </v-card>
     </v-col>
 
@@ -82,29 +82,22 @@
           <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0">Lorem Ipsum</v-card-text>
           <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0">Lorem Ipsum</v-card-text>
         </div>
-
       </v-card>
     </v-col>
   </v-row>
-
-
-
-
 </template>
 
 <script>
-
 export default {
-  name: 'FooterBottom',
+  name: "FooterBottom",
   data() {
     return {
-      // date: new Date(),
       liveTime: '',
     }
   },
   mounted() {
-    this.updateTime()
-    setInterval(this.updateTime, 1000)
+    this.updateTime();
+    setInterval(this.updateTime, 1000);
   },
   methods: {
     updateTime() {
@@ -118,5 +111,5 @@ export default {
       this.liveTime = `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}  GMT ${-date.getTimezoneOffset() / 60 >= 0 ? ' +' : ' '}${-date.getTimezoneOffset() / 60} `
     }
   },
-}
+};
 </script>
