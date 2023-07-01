@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="#17130E" class="py-0">
+  <v-footer color="#17130E" class="py-0 px-0">
     <v-container
       width="75vw"
       class="d-flex justify-center align-center px-10 py-0"
@@ -52,7 +52,6 @@ export default {
   data() {
     return {
       links: ["Sobre", "Contato", "Endereco"],
-      // date: new Date(),
     };
   },
 };
