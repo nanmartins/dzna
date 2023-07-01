@@ -119,7 +119,7 @@ export default {
         ${String(date.getMinutes()).padStart(2, "0")}:
         ${String(date.getSeconds()).padStart(2, "0")}
         GMT ${-date.getTimezoneOffset() / 60 >= 0 ? " +" : " "}
-        ${-date.getTimezoneOffset() / 60} `;
+        ${-date.getTimezoneOffset() / 60} `
     },
   },
 };

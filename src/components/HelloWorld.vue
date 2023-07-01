@@ -1,9 +1,12 @@
 <template>
   <v-container class="fill-height" color="#212121">
     <v-responsive class="align-center text-center fill-height">
+      <div v-for="(concurso) in concursos" :key="concurso.id">
+        {{ concurso }}
+      </div>
       <v-img height="300" src="@/assets/logo.svg" />
 
-      <div class="text-body-2 font-weight-light mb-n1">Welcome to</div>
+      <div class="text-body-2 font-weight-light">Welcome to</div>
 
       <h1 class="text-h2 font-weight-bold">Vuetify</h1>
 
@@ -67,12 +70,33 @@
         </v-col>
       </v-row>
     </v-responsive>
+
   </v-container>
 </template>
 
-<script setup>
-  ////////////////////////////////////////// ~~~
-  // @/default/file.vue will be the main layout, rendering @/views inside, which will formed by @/components
-// doing so i can use the v-app component as "top-level/parent" of files at @/components
+<script>
+
+export default {
+  data() {
+    return {
+      concursos: []
+    }
+  },
+
+  methods: {
+    getConcursos() {
+      fetch('http://localhost:3000/concursos')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        this.concursos = data
+      })
+    }
+  },
+
+  created() {
+    this.getConcursos()
+  }
+}
 
 </script>

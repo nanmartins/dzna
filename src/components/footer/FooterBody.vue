@@ -41,18 +41,20 @@
   </v-footer>
 </template>
 
-<script>
+<script setup>
 import FooterBottom from "@/components/footer/FooterBottom.vue";
 
-export default {
-  name: "FooterBody",
-  components: {
-    FooterBottom,
-  },
-  data() {
-    return {
-      links: ["Sobre", "Contato", "Endereco"],
-    };
-  },
-};
+const links = ["Sobre", "Contato", "Endereco"]
+
+// export default {
+//   name: "FooterBody",
+//   components: {
+//     FooterBottom,
+//   },
+//   data() {
+//     return {
+//       links: ["Sobre", "Contato", "Endereco"],
+//     };
+//   },
+// };
 </script>
