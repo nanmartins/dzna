@@ -1,14 +1,11 @@
 <template>
   <v-row class="pa-0 ma-0 py-10 px-12" width="70vw">
     <v-col cols="3" class="pa-0 ma-0">
-      <!-- Coluna da esquerda -->
       <v-card class="column-left" outlined color="#17130E">
-        <!-- Conteúdo da coluna da esquerda -->
-
         <div>
           <!-- FOOTER LOGO -->
           <!-- <v-card class="px-0 py-0" color="#17130E"> -->
-          <v-card-title class="px-0 py-0 mb-8 text-h4">Footer</v-card-title>
+          <v-card-title class="px-0 py-0 mb-10 text-h4">Footer</v-card-title>
           <!-- </v-card> -->
 
           <!-- FOOTER TIME / LANGUAGE -->
@@ -22,7 +19,7 @@
 
             <!-- <v-card flat color="#17130E"> -->
             <v-row
-              class="d-flex flex-row py-2 px-0 mx-0 mb-8 align-center"
+              class="d-flex flex-row py-2 px-0 mx-0 mb-10 align-center"
               width="250px"
             >
               <v-img
@@ -38,7 +35,7 @@
             </v-row>
             <!-- </v-card> -->
 
-            <v-card color="#17130E">
+            <v-card elevation="none" color="#17130E" class="pb-0">
               <v-icon
                 icon="mdi:mdi-toggle-switch"
                 color="yellow-darken-2"
@@ -81,7 +78,7 @@
           voluptas! Quis, aspernatur quasi!
         </v-card-text>
 
-        <v-card-text class="text-body-1 font-weight-light text-start">
+        <v-card-text class="text-body-1 font-weight-light text-start pb-0 mb-0">
           Mauris est egestas malesuada gidnissim nam.
         </v-card-text>
 

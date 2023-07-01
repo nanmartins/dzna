@@ -1,6 +1,5 @@
 <template>
   <v-footer color="#17130E" class="py-0">
-
     <v-container
       width="75vw"
       class="d-flex justify-center align-center px-10 py-0"
@@ -8,14 +7,15 @@
       <!-- //////////////////////   FOOTER TOP  //////////////////////////// -->
       <v-row class="pa-0 ma-0">
         <v-col class="d-flex flex-fill justify-center py-8">
-
           <div class="d-flex flex-row pa-0 ma-0">
-            <!-- <div class="d-flex flex-row pa-0 ma-0"> -->
-              <v-img src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687985658/footer-pix-logo_mt4hpg.png"></v-img>
-            <!-- </div> -->
-            <!-- <div class="d-flex flex-row pa-0 ma-0 ml-2"> -->
-              <v-img src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687985674/foooter-pix_juit9t.png" class="ml-2"></v-img>
-            <!-- </div> -->
+            <v-img
+              src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687985658/footer-pix-logo_mt4hpg.png"
+            ></v-img>
+
+            <v-img
+              src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687985674/foooter-pix_juit9t.png"
+              class="ml-2"
+            ></v-img>
           </div>
 
           <div class="d-flex flex-row pa-0 ma-0 ml-8">
@@ -23,50 +23,37 @@
               color="grey-lighten-1"
               src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687987430/footer-circle_hx4l7p.png"
               class="text-center align-center text-h5 font-weight-bold"
-            >+18</v-img>
+              >+18</v-img
+            >
           </div>
-
         </v-col>
 
         <!-- //////////////////////   DIVIDER  ////////////////// -->
         <v-divider :thickness="2" class="mx-12"></v-divider>
 
+        <!-- /////////////////////   FOOTER BOTTOM  ////////////////////// -->
 
-        <!-- <div class="d-flex flex-column">
-
-        </div>
-        <v-col class="d-flex flex-fill text-center mt-4 text-white" cols="12">
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-        </v-col> -->
-
-
-      <!-- /////////////////////   FOOTER BOTTOM  ////////////////////// -->
-
-      <FooterBottom />
-
+        <FooterBottom />
       </v-row>
-
-
     </v-container>
 
     <!-- </v-row> -->
   </v-footer>
-
 </template>
 
 <script>
-import FooterBottom from '@/components/footer/FooterBottom.vue'
+import FooterBottom from "@/components/footer/FooterBottom.vue";
 
-  export default {
-    name: 'FooterBody',
-    components: {
-      FooterBottom
-    },
-    data() {
-      return {
-        links: ['Sobre', 'Contato', 'Endereco'],
-        // date: new Date(),
-      }
-    }
-  }
+export default {
+  name: "FooterBody",
+  components: {
+    FooterBottom,
+  },
+  data() {
+    return {
+      links: ["Sobre", "Contato", "Endereco"],
+      // date: new Date(),
+    };
+  },
+};
 </script>
