@@ -4,17 +4,17 @@
       <v-card flat class="column-left" outlined color="#17130E">
         <div>
           <!-- <v-card class="px-0 py-0" color="#17130E"> -->
-          <v-card-title class="px-0 py-0 mb-8 text-h4">Footer</v-card-title>
+          <v-card-title class="px-0 py-0 mb-10 text-h4">Footer</v-card-title>
           <!-- </v-card> -->
 
           <div class="d-flex flex-column">
-            <v-card-text flat class="px-0 text-body-2">
+            <v-card-text flat class="px-0 py-0 pb-2 text-body-2">
               Horário local: {{ liveTime }}
             </v-card-text>
 
             <!-- <v-card flat color="#17130E"> -->
             <v-row
-              class="d-flex flex-row py-2 px-0 mx-0 mb-10 align-center"
+              class="d-flex flex-row py-0 px-0 mx-0 mb-10 align-center"
               width="250px"
             >
               <v-img
