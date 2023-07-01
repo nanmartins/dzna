@@ -8,13 +8,13 @@
           <!-- </v-card> -->
 
           <div class="d-flex flex-column">
-            <v-card-text flat class="px-0 text-body-2">
+            <v-card-text flat class="px-0 py-2 text-body-2">
               Horário local: {{ liveTime }}
             </v-card-text>
 
             <!-- <v-card flat color="#17130E"> -->
             <v-row
-              class="d-flex flex-row py-2 px-0 mx-0 mb-10 align-center"
+              class="d-flex flex-row py-2 px-0 mx-0 mb-8 align-center"
               width="250px"
             >
               <v-img
@@ -23,7 +23,7 @@
                 class="px-0 mx-0"
                 src="https://res.cloudinary.com/dpskrziq1/image/upload/c_crop/v1687996011/Brazil_pf2dtv.png"
               ></v-img>
-              <v-card-text class="text-h6 px-0 ma-0 pl-2"
+              <v-card-text class="text-h6 px-0 py-0 ma-0 pl-2"
                 >Português</v-card-text
               >
             </v-row>

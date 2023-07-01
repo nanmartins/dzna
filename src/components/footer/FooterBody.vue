@@ -52,7 +52,6 @@ export default {
   data() {
     return {
       links: ["Sobre", "Contato", "Endereco"],
-      // date: new Date(),
     };
   },
 };
