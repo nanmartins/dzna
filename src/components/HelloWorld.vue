@@ -28,11 +28,7 @@
             target="_blank"
             variant="text"
           >
-            <v-icon
-              icon="mdi-view-dashboard"
-              size="large"
-              start
-            />
+            <v-icon icon="mdi-view-dashboard" size="large" start />
 
             Components
           </v-btn>
@@ -48,11 +44,7 @@
             target="_blank"
             variant="flat"
           >
-            <v-icon
-              icon="mdi-speedometer"
-              size="large"
-              start
-            />
+            <v-icon icon="mdi-speedometer" size="large" start />
 
             Get Started
           </v-btn>
@@ -66,45 +58,38 @@
             target="_blank"
             variant="text"
           >
-            <v-icon
-              icon="mdi-account-group"
-              size="large"
-              start
-            />
+            <v-icon icon="mdi-account-group" size="large" start />
 
             Community
           </v-btn>
         </v-col>
       </v-row>
     </v-responsive>
-
   </v-container>
 </template>
 
 <script>
-
 export default {
   data() {
     return {
-      concursos: []
-    }
+      concursos: [],
+    };
   },
 
   methods: {
     getConcursos() {
-      fetch('http://localhost:3000/concursos')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        this.concursos = data
-      })
-    }
+      fetch("http://localhost:3000/concursos")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          this.concursos = data;
+        });
+    },
   },
   // e1db06e8ac14c72f3622082e83772c0b832d5117432f44fd1662c3a40c4d02ed7b8732697dbe1cc4734e2c50c0267574a6203a75a2b91ca734a45b901fb21aa7cdbdb4cbacf2abea946f615f37a058ff73f9f89b93ae5d38a4373f95670dcce85b1a247e238dc287d96872852412e419ebf68b01c77e4eea0b8f143ffbdbc582
 
   created() {
-    this.getConcursos()
-  }
-}
-
+    this.getConcursos();
+  },
+};
 </script>
