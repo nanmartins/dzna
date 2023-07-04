@@ -2,7 +2,14 @@
   <v-container class="fill-height" color="#212121">
     <v-responsive class="align-center text-center fill-height">
       <div v-for="(concurso) in concursos" :key="concurso.id">
-        {{ concurso }}
+        <!-- {{ concurso }} -->
+        {{ concurso.regiao_id }}
+        {{ concurso.num_serie }}
+        {{ concurso.faixa_inicial }}
+        {{ concurso.faixa_final }}
+        {{ concurso.tipo_concurso.descricao }}
+        {{ concurso.tipo_apuracao.descricao }}
+
       </div>
       <v-img height="300" src="@/assets/logo.svg" />
 
