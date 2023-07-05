@@ -3,12 +3,23 @@
     <v-responsive class="align-center text-center fill-height">
       <div v-for="(concurso) in concursos" :key="concurso.id">
         <!-- {{ concurso }} -->
+        <h4>{{ concurso.tipo_concurso.descricao }}</h4>
+        <h5>{{ concurso.tipo_apuracao.descricao }}</h5>
+        <h4>
+          Concurso: {{ concurso.id }}
+
+        </h4>
+        <div v-if="concurso.dt_final === (String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()))">
         {{ concurso.regiao_id }}
+
+        </div>
+
+        <div v-else>
+
+        </div>
         {{ concurso.num_serie }}
         {{ concurso.faixa_inicial }}
         {{ concurso.faixa_final }}
-        {{ concurso.tipo_concurso.descricao }}
-        {{ concurso.tipo_apuracao.descricao }}
 
       </div>
       <v-img height="300" src="@/assets/logo.svg" />
@@ -73,6 +84,7 @@ export default {
   data() {
     return {
       concursos: [],
+      dataHoje: String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear())
     };
   },
 
@@ -90,6 +102,7 @@ export default {
 
   created() {
     this.getConcursos();
+    console.log(String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()))
   },
 };
 </script>
