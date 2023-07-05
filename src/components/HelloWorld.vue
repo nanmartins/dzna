@@ -7,16 +7,18 @@
         <h5>{{ concurso.tipo_apuracao.descricao }}</h5>
         <h4>
           Concurso: {{ concurso.id }}
-
+          <span class="bg-red py-1 px-2 rounded ml-2" v-if="concurso.dt_final <= (String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()))">Inativo</span>
+          <span v-else>Ativo</span>
         </h4>
-        <div v-if="concurso.dt_final === (String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()))">
-        {{ concurso.regiao_id }}
+        <!-- <div v-if="concurso.dt_final === (String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()))"> -->
 
-        </div>
+        <!-- {{ concurso.regiao_id }} -->
 
-        <div v-else>
+        <!-- </div> -->
 
-        </div>
+        <!-- <div v-else> -->
+          <!-- {{ concurso.desativado }} -->
+        <!-- </div> -->
         {{ concurso.num_serie }}
         {{ concurso.faixa_inicial }}
         {{ concurso.faixa_final }}
@@ -84,7 +86,7 @@ export default {
   data() {
     return {
       concursos: [],
-      dataHoje: String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear())
+      dataHoje: "",
     };
   },
 
