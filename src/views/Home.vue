@@ -2,7 +2,8 @@
   <HeaderBody />
   <SideNav />
   <MainBanner />
-  <HelloWorld />
+  <PremiacaoCard />
+  <!-- <HelloWorld /> -->
   <FooterBody />
 </template>
 
@@ -12,4 +13,5 @@ import HeaderBody from "@/components/HeaderBody.vue";
 import FooterBody from "@/components/footer/FooterBody.vue";
 import SideNav from "@/components/SideNav.vue";
 import MainBanner from "@/components/MainBanner.vue";
+import PremiacaoCard from "@/components/PremiacaoCard.vue";
 </script>

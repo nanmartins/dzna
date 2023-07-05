@@ -7,9 +7,15 @@
         <h5>{{ concurso.tipo_apuracao.descricao }}</h5>
         <h4>
           Concurso: {{ concurso.id }}
-          <span class="bg-red py-1 px-2 rounded ml-2" v-if="concurso.dt_final <= (String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()))">Inativo</span>
-          <span v-else>Ativo</span>
+          <span v-if="concurso.dt_final <= dataHoje" class="bg-red py-1 px-2 rounded ml-2">Inativo</span>
+          <span v-else class="bg-green py-1 px-2 rounded ml-2">Ativo</span>
         </h4>
+        <h4>Início do Concurso:
+          <span v-if="concurso.tipo_concurso.descricao.includes('Sabado')">Sábado, </span>
+          {{ concurso.dt_final }} as {{ concurso.hr_inicio.substring(0, 5) }}h
+        </h4>
+
+
         <!-- <div v-if="concurso.dt_final === (String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()))"> -->
 
         <!-- {{ concurso.regiao_id }} -->
@@ -19,11 +25,24 @@
         <!-- <div v-else> -->
           <!-- {{ concurso.desativado }} -->
         <!-- </div> -->
-        {{ concurso.num_serie }}
+        <!-- {{ concurso.num_serie }}
         {{ concurso.faixa_inicial }}
-        {{ concurso.faixa_final }}
+        {{ concurso.faixa_final }} -->
+
+        <v-card v-for="(bolao) in concurso.bolao" :key="bolao.id">
+          <v-card-title>{{ bolao.premio_bolao }}</v-card-title>
+          <v-card-subtitle>{{ bolao.tipo_bolao }}</v-card-subtitle>
+          <v-card-text>{{ bolao.descricao }}</v-card-text>
+        </v-card>
 
       </div>
+
+      <!-- <v-card v-for="(concurso) in concursos" :key="concurso.id">
+        <v-card-title>{{ concurso.bolao.premio_bolao }}</v-card-title>
+        <v-card-subtitle>{{ concurso.bolao.tipo_bolao }}</v-card-subtitle>
+        <v-card-text>{{ concurso.bolao.descricao }}</v-card-text>
+      </v-card> -->
+
       <v-img height="300" src="@/assets/logo.svg" />
 
       <div class="text-body-2 font-weight-light">Welcome to</div>
@@ -86,7 +105,9 @@ export default {
   data() {
     return {
       concursos: [],
-      dataHoje: "",
+      dataHoje: String(new Date().getDate()).padStart(2, 0)
+        + '/' + String(new Date().getMonth()).padStart(2, 0)
+        + '/' + String(new Date().getFullYear()),
     };
   },
 
@@ -100,11 +121,10 @@ export default {
         });
     },
   },
-  // e1db06e8ac14c72f3622082e83772c0b832d5117432f44fd1662c3a40c4d02ed7b8732697dbe1cc4734e2c50c0267574a6203a75a2b91ca734a45b901fb21aa7cdbdb4cbacf2abea946f615f37a058ff73f9f89b93ae5d38a4373f95670dcce85b1a247e238dc287d96872852412e419ebf68b01c77e4eea0b8f143ffbdbc582
 
   created() {
     this.getConcursos();
-    console.log(String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()))
+    // console.log(String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()))
   },
 };
 </script>
