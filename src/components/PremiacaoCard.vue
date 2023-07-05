@@ -16,16 +16,13 @@
         </h4>
 
 
-        <div v-for="(premio) in concurso.bolao" :key="premio.id">
-          {{ premio.premio_bolao }}
+        <div v-for="(bolao) in concurso.bolao" :key="bolao.id">
+          <v-card>
+            <v-card-title>{{ bolao.premio_bolao }}</v-card-title>
+            <v-card-subtitle>{{ bolao.tipo_bolao }}</v-card-subtitle>
+            <v-card-text>{{ bolao.descricao }}</v-card-text>
+          </v-card>
         </div>
-
-
-        <v-card v-for="(bolao) in concurso.bolao" :key="bolao.id">
-          <v-card-title>{{ bolao.premio_bolao }}</v-card-title>
-          <v-card-subtitle>{{ bolao.tipo_bolao }}</v-card-subtitle>
-          <v-card-text>{{ bolao.descricao }}</v-card-text>
-        </v-card>
 
       </div>
     </v-responsive>
@@ -48,7 +45,7 @@ export default {
       fetch("http://localhost:3000/concursos")
         .then((response) => response.json())
         .then((data) => {
-          // console.log(data)
+          // console.log(data[0].bolao)
           this.concursos = data
         })
     },
