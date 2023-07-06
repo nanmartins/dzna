@@ -16,8 +16,8 @@
         </h4>
 
 
-        <div v-for="(bolao) in concurso.bolao" :key="bolao.id">
-          <v-card>
+        <div v-for="(bolao) in concurso.bolao" :key="bolao.id" class="d-flex justify-center">
+          <v-card class="d-flex flex-column w-25">
             <v-card-title>{{ bolao.premio_bolao }}</v-card-title>
             <v-card-subtitle>{{ bolao.tipo_bolao }}</v-card-subtitle>
             <v-card-text>{{ bolao.descricao }}</v-card-text>
