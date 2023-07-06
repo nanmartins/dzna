@@ -17,4 +17,18 @@ const app = createApp(App)
 
 registerPlugins(app)
 
+
+// app.config.globalProperties.$appContext.app.config.globalProperties.$options.filters['numeroPreco'] = valor => {
+//   valor = Number(valor)
+//   if (!isNaN(valor)) {
+//     return valor.toLocaleString("pt-BR", {
+//       style: 'currency',
+//       currency: 'BRL'
+//     })
+//   }
+//   else {
+//     return ""
+//   }
+// }
+
 app.mount('#app')

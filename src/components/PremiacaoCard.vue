@@ -15,13 +15,25 @@
           {{ concurso.dt_final }} as {{ concurso.hr_inicio.substring(0, 5) }}h
         </h4>
 
+        <div class="d-flex flex-wrap justify-center">
+          <div v-for="(bolao) in concurso.bolao" :key="bolao.id" class="d-flex flex-row align-center justify-center">
+            <v-card class="d-flex flex-column ma-2" height="480px" width="360px">
+              <span v-if="bolao.status === 'Premio Acumulado'" class="bg-green w-25 rounded">Acumulado!</span>
+              <v-card-title>{{ bolao.premio_bolao }}</v-card-title>
+              <v-card-subtitle>{{ bolao.tipo_bolao }}</v-card-subtitle>
+              <v-card-text>{{ bolao.descricao }}</v-card-text>
 
-        <div v-for="(bolao) in concurso.bolao" :key="bolao.id" class="d-flex justify-center">
-          <v-card class="d-flex flex-column w-25">
-            <v-card-title>{{ bolao.premio_bolao }}</v-card-title>
-            <v-card-subtitle>{{ bolao.tipo_bolao }}</v-card-subtitle>
-            <v-card-text>{{ bolao.descricao }}</v-card-text>
-          </v-card>
+              <div v-if="parseInt(bolao.status) > 0">
+                <v-card-text>{{ bolao.status }} Ganhadores</v-card-text>
+                <v-card-text>{{ (bolao.premio_bolao / parseInt(bolao.status)).toFixed(2) }} Premio para cada ganhador</v-card-text>
+              </div>
+
+              <div v-else>
+                {{ bolao.status }} para o próximo concurso
+              </div>
+
+            </v-card>
+          </div>
         </div>
 
       </div>
