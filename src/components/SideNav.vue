@@ -2,7 +2,6 @@
   <v-navigation-drawer
     v-model="drawer"
     :rail="rail"
-    border="none"
     color="#1F1B16"
     permanent
     @click="rail = !rail"

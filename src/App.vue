@@ -7,7 +7,8 @@
 </script>
 
 <style>
-html {
+html,
+body {
   background: #17130e;
 }
 </style>
