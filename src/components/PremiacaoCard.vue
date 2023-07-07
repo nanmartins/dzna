@@ -3,7 +3,6 @@
   <v-container class="fill-height">
     <v-responsive class="align-center text-center fill-height">
 
-      <h1>Concurso</h1>
       <div v-for="(concurso) in concursos" :key="concurso.id">
         <!-- {{ concurso }} -->
         <h4>{{ concurso.tipo_concurso.descricao }}</h4>
@@ -24,7 +23,8 @@
         <div class="d-flex flex-wrap justify-center">
           <div v-for="(bolao) in concurso.bolao" :key="bolao.id" class="d-flex flex-row align-center justify-center">
             <v-card class="d-flex flex-column ma-2" height="480px" width="360px">
-              <span v-if="bolao.finalizado === 'false'" class="bg-green w-25 rounded">Acumulado!</span>
+              <span v-if="bolao.finalizado === 'false'" class="d-inline-block bg-green rounded py-1 px-1">Acumulado!</span>
+              <!-- <v-badge v-if="bolao.finalizado === 'false'" class="w-25 rounded" color="green" content="Acumulado!" location="rigth"></v-badge> -->
               <v-card-title>{{ formatarValor(bolao.premio_bolao) }}</v-card-title>
               <v-card-subtitle>{{ bolao.tipo_bolao }}</v-card-subtitle>
               <v-card-text>{{ bolao.descricao }}</v-card-text>
