@@ -18,6 +18,18 @@ const routes = [
       },
     ],
   },
+
+  {
+    path: '/concursos',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Concursos',
+        component: () => import('@/views/Concursos.vue'),
+      }
+    ]
+  }
 ]
 
 const router = createRouter({

@@ -18,16 +18,22 @@
     </v-list-item>
 
     <v-list density="compact" nav>
-      <v-list-item
-        prepend-icon="mdi:mdi-home"
-        title="Inicio"
-        value="home"
-      ></v-list-item>
-      <v-list-item
-        prepend-icon="mdi:mdi-calendar"
-        title="Concursos"
-        value="concursos"
-      ></v-list-item>
+      <router-link to="/">
+        <v-list-item
+          prepend-icon="mdi:mdi-home"
+          title="Inicio"
+          value="home"
+        ></v-list-item>
+      </router-link>
+
+      <router-link to="/concursos">
+        <v-list-item
+          prepend-icon="mdi:mdi-calendar"
+          title="Concursos"
+          value="concursos"
+        ></v-list-item>
+      </router-link>
+
       <v-list-item
         prepend-icon="mdi:mdi-minus"
         title="Ganhadores"
