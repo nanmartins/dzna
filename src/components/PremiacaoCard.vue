@@ -5,11 +5,11 @@
 
       <div v-for="(concurso) in concursos" :key="concurso.id">
         <!-- {{ concurso }} -->
-        <h4>{{ concurso.tipo_concurso.descricao }}</h4>
-        <h5>{{ concurso.tipo_apuracao.descricao }}</h5>
+        <h2>{{ concurso.tipo_concurso.descricao }}</h2>
+        <h4>{{ concurso.tipo_apuracao.descricao }}</h4>
         <h4>
           Concurso: {{ concurso.id }}
-          <span v-if="concurso.dt_final <= dataHoje || concurso.desativado === 'true'" class="bg-red py-1 px-2 rounded ml-2">Inativo</span>
+          <span v-if="concurso.dt_final <= dataHoje || concurso.desativado === 'true'" class="bg-red py-1 px-2 rounded ml-2">Finalizado</span>
           <span v-else class="bg-green py-1 px-2 rounded ml-2">Ativo</span>
         </h4>
         <h4>Início do Concurso:
@@ -21,28 +21,47 @@
         <h1>{{ formatarValor(totalPremios) }} em {{ Object.keys(concurso.bolao).length }} premiações</h1>
 
         <div class="d-flex flex-wrap justify-center">
-          <div v-for="(bolao) in concurso.bolao" :key="bolao.id" class="d-flex flex-row align-center justify-center">
-            <v-card class="d-flex flex-column ma-2" height="480px" width="360px">
-              <span v-if="bolao.finalizado === 'false'" class="d-inline-block bg-green rounded py-1 px-1">Acumulado!</span>
-              <!-- <v-badge v-if="bolao.finalizado === 'false'" class="w-25 rounded" color="green" content="Acumulado!" location="rigth"></v-badge> -->
-              <v-card-title>{{ formatarValor(bolao.premio_bolao) }}</v-card-title>
-              <v-card-subtitle>{{ bolao.tipo_bolao }}</v-card-subtitle>
-              <v-card-text>{{ bolao.descricao }}</v-card-text>
-
-              <div v-if="parseInt(bolao.status) > 0">
-                <v-card-text>{{ bolao.status }} Ganhadores</v-card-text>
-                <v-card-text>{{ formatarValor((bolao.premio_bolao / parseInt(bolao.status)).toFixed(2)) }}
-                  <div>Premio para cada ganhador</div>
-                </v-card-text>
+          <div v-for="(bolao, index) in concurso.bolao" :key="bolao.id" class="d-flex flex-row align-center justify-center">
+            <v-card
+              class="d-flex flex-column ma-2 position-relative bg-indigo"
+              :style="{ backgroundColor: cores[index] }"
+              height="480px"
+              width="360px"
+              style="overflow: visible;"
+            >
+            <div
+              class="position-absolute text-h4"
+              style="top: 10px; right: 58px; transform: translate(100%, -100%) rotate(8deg);"
+            >
+              <v-badge
+                v-if="bolao.finalizado === 'false'"
+                class="w-25"
+                color="green"
+                content="Acumulado!"
+              ></v-badge>
+            </div>
+              <v-card-title class="text-h4 py-8">{{ formatarValor(bolao.premio_bolao) }}</v-card-title>
+              <div class="d-flex flex-column align-center bg-white mx-2 py-12">
+                <v-card-subtitle class="text-h4 pa-6 font-weight-black">{{ bolao.tipo_bolao }}</v-card-subtitle>
+                <v-card-text class="py-2">{{ bolao.descricao }}</v-card-text>
               </div>
 
-              <v-card-text v-else>
+              <div v-if="parseInt(bolao.status) > 0" class="d-flex flex-column fill-height py-6">
+                <v-card-text class="text-h5">{{ bolao.status }} Ganhadores</v-card-text>
+                <v-card-text class="text-h5">{{ formatarValor((bolao.premio_bolao / parseInt(bolao.status)).toFixed(2)) }}
+                </v-card-text>
+                  <div class="text-h6 font-weight-light">Premio para cada ganhador</div>
+              </div>
+
+              <v-card-text v-else class="d-flex align-center text-h5 font-weight-medium">
                 {{ bolao.status }}
               </v-card-text>
-
             </v-card>
           </div>
         </div>
+
+
+
 
       </div>
     </v-responsive>
@@ -55,6 +74,7 @@ export default {
   data() {
     return {
       concursos: [],
+      cores: ['purple', 'indigo', 'pink', 'teal', 'amber'],
       dataHoje: String(new Date().getDate()).padStart(2, 0)
         + '/' + String(new Date().getMonth()).padStart(2, 0)
         + '/' + String(new Date().getFullYear()),
