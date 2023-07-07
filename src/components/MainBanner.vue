@@ -9,8 +9,8 @@
         class="mx-auto px-14 mt-16">
       </v-img> -->
 
-      <div width="75vw" class="d-flex justify-center align-center px-10 py-0">
-        <v-card width="75vw" height="220px" class="mx-auto my-11">
+      <div class="d-flex justify-center align-center px-10 py-0">
+        <v-card width="75vw" height="220px" class="mx-auto mt-14">
           <v-card-title
             class="d-flex align-center justify-center mx-auto my-auto h-100 text-h1"
             >BANNER</v-card-title

@@ -1,8 +1,8 @@
 <template>
   <v-footer color="#17130E" class="py-0 px-0">
     <v-container
-      width="75vw"
-      class="d-flex justify-center align-center px-10 py-0"
+      width="70vw"
+      class="d-flex justify-center align-center px-15 py-0"
     >
       <!-- //////////////////////   FOOTER TOP  //////////////////////////// -->
       <v-row class="pa-0 ma-0">
@@ -44,7 +44,7 @@
 <script setup>
 import FooterBottom from "@/components/footer/FooterBottom.vue";
 
-const links = ["Sobre", "Contato", "Endereco"]
+// const links = ["Sobre", "Contato", "Endereco"]
 
 // export default {
 //   name: "FooterBody",

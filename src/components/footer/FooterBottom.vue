@@ -46,21 +46,21 @@
       <v-card flat class="column-center" color="#17130E" outlined>
         <!-- <v-col class="px-4 py-0 my-0"> -->
         <!-- <v-card flat color="#17130E"> -->
-        <v-card-text class="py-0 text-body-1 text-start row-height">
+        <v-card-text class="py-0 text-body-1 text-justify row-height">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
           delectus praesentium error numquam aut amet laudantium deleniti non
           dignissimos laboriosam, doloribus dolorem excepturi facilis nesciunt!
           Ad sunt dolore temporibus eaque?
         </v-card-text>
 
-        <v-card-text color="#616161" class="text-body-1 text-start">
+        <v-card-text color="#616161" class="text-body-1 text-justify">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
           perspiciatis aliquid veritatis tempora! Dolorum, officia! Ut quo fugit
           voluptatibus facere maxime ab eaque voluptates, natus dolores
           voluptas! Quis, aspernatur quasi!
         </v-card-text>
 
-        <v-card-text class="text-body-1 text-start">
+        <v-card-text class="text-body-1 text-justify">
           Mauris est egestas malesuada gidnissim nam.
         </v-card-text>
 

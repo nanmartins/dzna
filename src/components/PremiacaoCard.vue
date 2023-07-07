@@ -4,24 +4,19 @@
       <v-responsive class="align-center text-center fill-height">
         <div v-for="concurso in concursos" :key="concurso.id">
           <!-- {{ concurso }} -->
-          <h2>{{ concurso.tipo_concurso.descricao }}</h2>
+          <h2 class="text-h4 font-weight-bold">{{ concurso.tipo_concurso.descricao }}</h2>
           <h4>{{ concurso.tipo_apuracao.descricao }}</h4>
           <h4>
             Concurso: {{ concurso.id }}
             <span
-              v-if="
-                concurso.dt_final <= dataHoje || concurso.desativado === 'true'
-              "
+              v-if="concurso.dt_final <= dataHoje || concurso.desativado === 'true'"
               class="bg-red py-1 px-2 rounded ml-2"
-              >Finalizado</span
-            >
+            >Finalizado</span>
             <span v-else class="bg-green py-1 px-2 rounded ml-2">Ativo</span>
           </h4>
           <h4>
             Início do Concurso:
-            <span v-if="concurso.tipo_concurso.descricao.includes('Sabado')"
-              >Sábado,
-            </span>
+            <span v-if="concurso.tipo_concurso.descricao.includes('Sabado')">Sábado, </span>
             {{ concurso.dt_final }} as {{ concurso.hr_inicio.substring(0, 5) }}h
           </h4>
 
@@ -32,13 +27,13 @@
 
           <div class="d-flex flex-wrap justify-center">
             <div
-              v-for="(bolao, index) in concurso.bolao"
+              v-for="(bolao, index) in Object.values(concurso.bolao)"
               :key="bolao.id"
               class="d-flex flex-row align-center justify-center"
             >
               <v-card
-                class="d-flex flex-column ma-2 position-relative bg-indigo"
-                :style="{ backgroundColor: cores[index] }"
+                class="d-flex flex-column ma-2 position-relative"
+                :style="{ backgroundColor: cardColor(index) }"
                 height="480px"
                 width="360px"
                 style="overflow: visible"
@@ -48,8 +43,7 @@
                   style="
                     top: 10px;
                     right: 58px;
-                    transform: translate(100%, -100%) rotate(8deg);
-                  "
+                    transform: translate(100%, -100%) rotate(8deg);"
                 >
                   <v-badge
                     v-if="bolao.finalizado === 'false'"
@@ -109,7 +103,6 @@ export default {
   data() {
     return {
       concursos: [],
-      cores: ["purple", "indigo", "pink", "teal", "amber"],
       dataHoje:
         String(new Date().getDate()).padStart(2, 0) +
         "/" +
@@ -124,7 +117,6 @@ export default {
       fetch("http://localhost:3000/concursos")
         .then((response) => response.json())
         .then((data) => {
-          // console.log(data[0].bolao)
           this.concursos = data;
         });
     },
@@ -140,6 +132,13 @@ export default {
         return "";
       }
     },
+
+    cardColor(index) {
+      const cores = ["purple", "indigo", "teal", "amber", "green-darker-3"]
+      const colorIndex = index % cores.length
+      return cores[colorIndex]
+    }
+
   },
 
   computed: {
@@ -148,7 +147,6 @@ export default {
       for (const concurso of this.concursos) {
         const bolao = concurso.bolao;
         if (bolao && typeof bolao === "object") {
-          // Verifica se bolao é um objeto válido
           for (const key in bolao) {
             const premio = bolao[key];
             const valor = Number(premio.premio_bolao);
@@ -160,11 +158,11 @@ export default {
       }
       return total;
     },
+
   },
 
   created() {
     this.getConcursos();
-    // console.log(String(new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()))
   },
 };
 </script>
