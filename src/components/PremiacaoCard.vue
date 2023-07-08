@@ -4,19 +4,26 @@
       <v-responsive class="align-center text-center fill-height">
         <div v-for="concurso in concursos" :key="concurso.id">
           <!-- {{ concurso }} -->
-          <h2 class="text-h4 font-weight-bold">{{ concurso.tipo_concurso.descricao }}</h2>
+          <h2 class="text-h4 font-weight-bold">
+            {{ concurso.tipo_concurso.descricao }}
+          </h2>
           <h4>{{ concurso.tipo_apuracao.descricao }}</h4>
           <h4>
             Concurso: {{ concurso.id }}
             <span
-              v-if="concurso.dt_final <= dataHoje || concurso.desativado === 'true'"
+              v-if="
+                concurso.dt_final <= dataHoje || concurso.desativado === 'true'
+              "
               class="bg-red py-1 px-2 rounded ml-2"
-            >Finalizado</span>
+              >Finalizado</span
+            >
             <span v-else class="bg-green py-1 px-2 rounded ml-2">Ativo</span>
           </h4>
           <h4>
             Início do Concurso:
-            <span v-if="concurso.tipo_concurso.descricao.includes('Sabado')">Sábado, </span>
+            <span v-if="concurso.tipo_concurso.descricao.includes('Sabado')"
+              >Sábado,
+            </span>
             {{ concurso.dt_final }} as {{ concurso.hr_inicio.substring(0, 5) }}h
           </h4>
 
@@ -32,7 +39,13 @@
               class="d-flex flex-row align-center justify-center"
             >
               <v-card
-                :class="['d-flex', 'flex-column', 'ma-2', 'position-relative', `bg-${this.cores[index]}`]"
+                :class="[
+                  'd-flex',
+                  'flex-column',
+                  'ma-2',
+                  'position-relative',
+                  `bg-${this.cores[index]}`,
+                ]"
                 height="480px"
                 width="360px"
                 style="overflow: visible"
@@ -40,9 +53,10 @@
                 <div
                   class="position-absolute text-h4"
                   style="
-                    top: 10px;
+                    top: 8px;
                     right: 58px;
-                    transform: translate(100%, -100%) rotate(8deg);"
+                    transform: translate(100%, -100%) rotate(7deg);
+                  "
                 >
                   <v-badge
                     v-if="bolao.finalizado === 'false'"
@@ -56,11 +70,15 @@
                   {{ formatarValor(bolao.premio_bolao) }}
                 </v-card-title>
 
-                <div class="d-flex flex-column align-center rounded bg-grey-lighten-2 mx-2 py-12">
+                <div
+                  class="d-flex flex-column align-center rounded bg-grey-lighten-2 mx-2 py-12"
+                >
                   <v-card-subtitle class="text-h4 pa-6 font-weight-black">{{
                     bolao.tipo_bolao
                   }}</v-card-subtitle>
-                  <v-card-text class="text-subtitle-1 py-2">{{ bolao.descricao }}</v-card-text>
+                  <v-card-text class="text-subtitle-1 py-2">{{
+                    bolao.descricao
+                  }}</v-card-text>
                 </div>
 
                 <div
@@ -71,11 +89,13 @@
                     {{ bolao.status }} Ganhadores
                   </v-card-text>
                   <v-card-text class="text-h5 pb-0 font-weight-bold">
-                    {{ formatarValor((bolao.premio_bolao / parseInt(bolao.status)).toFixed(2)) }}
+                    {{
+                      formatarValor(
+                        (bolao.premio_bolao / parseInt(bolao.status)).toFixed(2)
+                      )
+                    }}
                   </v-card-text>
-                  <div class="text-subtitle-1">
-                    Premio para cada ganhador
-                  </div>
+                  <div class="text-subtitle-1">Premio para cada ganhador</div>
                 </div>
 
                 <v-card-text
@@ -129,7 +149,6 @@ export default {
         return "";
       }
     },
-
   },
 
   computed: {
@@ -149,7 +168,6 @@ export default {
       }
       return total;
     },
-
   },
 
   created() {
