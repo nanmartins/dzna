@@ -51,16 +51,16 @@
                     content="Acumulado!"
                   ></v-badge>
                 </div>
+
                 <v-card-title class="text-h4 py-8 font-weight-black">
                   {{ formatarValor(bolao.premio_bolao) }}
                 </v-card-title>
-                <div
-                  class="d-flex flex-column align-center bg-white mx-2 py-12"
-                >
+
+                <div class="d-flex flex-column align-center rounded bg-grey-lighten-2 mx-2 py-12">
                   <v-card-subtitle class="text-h4 pa-6 font-weight-black">{{
                     bolao.tipo_bolao
                   }}</v-card-subtitle>
-                  <v-card-text class="py-2">{{ bolao.descricao }}</v-card-text>
+                  <v-card-text class="text-subtitle-1 py-2">{{ bolao.descricao }}</v-card-text>
                 </div>
 
                 <div
@@ -70,10 +70,10 @@
                   <v-card-text class="text-h5 font-weight-bold">
                     {{ bolao.status }} Ganhadores
                   </v-card-text>
-                  <v-card-text class="text-h5 font-weight-bold">
+                  <v-card-text class="text-h5 pb-0 font-weight-bold">
                     {{ formatarValor((bolao.premio_bolao / parseInt(bolao.status)).toFixed(2)) }}
                   </v-card-text>
-                  <div class="text-h6 font-weight-light">
+                  <div class="text-subtitle-1">
                     Premio para cada ganhador
                   </div>
                 </div>
