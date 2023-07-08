@@ -17,21 +17,21 @@
     </v-list-item>
 
     <v-list density="compact" nav>
-      <router-link to="/">
+      <!-- <router-link to="/"> -->
         <v-list-item
           prepend-icon="mdi:mdi-home"
           title="Inicio"
           value="home"
         ></v-list-item>
-      </router-link>
+      <!-- </router-link> -->
 
-      <router-link to="/concursos">
+      <!-- <router-link to="/concursos"> -->
         <v-list-item
           prepend-icon="mdi:mdi-calendar"
           title="Concursos"
           value="concursos"
         ></v-list-item>
-      </router-link>
+      <!-- </router-link> -->
 
       <v-list-item
         prepend-icon="mdi:mdi-minus"

@@ -27,13 +27,12 @@
 
           <div class="d-flex flex-wrap justify-center">
             <div
-              v-for="(bolao, index) in Object.values(concurso.bolao)"
+              v-for="(bolao, index) in concurso.bolao"
               :key="bolao.id"
               class="d-flex flex-row align-center justify-center"
             >
               <v-card
-                class="d-flex flex-column ma-2 position-relative"
-                :style="{ backgroundColor: cardColor(index) }"
+                :class="['d-flex', 'flex-column', 'ma-2', 'position-relative', `bg-${this.cores[index]}`]"
                 height="480px"
                 width="360px"
                 style="overflow: visible"
@@ -52,9 +51,9 @@
                     content="Acumulado!"
                   ></v-badge>
                 </div>
-                <v-card-title class="text-h4 py-8 font-weight-black">{{
-                  formatarValor(bolao.premio_bolao)
-                }}</v-card-title>
+                <v-card-title class="text-h4 py-8 font-weight-black">
+                  {{ formatarValor(bolao.premio_bolao) }}
+                </v-card-title>
                 <div
                   class="d-flex flex-column align-center bg-white mx-2 py-12"
                 >
@@ -68,15 +67,11 @@
                   v-if="parseInt(bolao.status) > 0"
                   class="d-flex flex-column fill-height py-6"
                 >
-                  <v-card-text class="text-h5 font-weight-bold"
-                    >{{ bolao.status }} Ganhadores</v-card-text
-                  >
-                  <v-card-text class="text-h5 font-weight-bold"
-                    >{{
-                      formatarValor(
-                        (bolao.premio_bolao / parseInt(bolao.status)).toFixed(2)
-                      )
-                    }}
+                  <v-card-text class="text-h5 font-weight-bold">
+                    {{ bolao.status }} Ganhadores
+                  </v-card-text>
+                  <v-card-text class="text-h5 font-weight-bold">
+                    {{ formatarValor((bolao.premio_bolao / parseInt(bolao.status)).toFixed(2)) }}
                   </v-card-text>
                   <div class="text-h6 font-weight-light">
                     Premio para cada ganhador
@@ -103,6 +98,7 @@ export default {
   data() {
     return {
       concursos: [],
+      cores: ["purple", "indigo", "teal", "deep-purple-accent-3", "light-blue"],
       dataHoje:
         String(new Date().getDate()).padStart(2, 0) +
         "/" +
@@ -117,6 +113,7 @@ export default {
       fetch("http://localhost:3000/concursos")
         .then((response) => response.json())
         .then((data) => {
+          // console.log(data[0].bolao)
           this.concursos = data;
         });
     },
@@ -132,12 +129,6 @@ export default {
         return "";
       }
     },
-
-    cardColor(index) {
-      const cores = ["purple", "indigo", "teal", "amber", "green-darker-3"]
-      const colorIndex = index % cores.length
-      return cores[colorIndex]
-    }
 
   },
 
