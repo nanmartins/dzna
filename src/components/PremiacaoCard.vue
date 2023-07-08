@@ -94,11 +94,14 @@
 </template>
 
 <script>
+
+import { formatarValor } from '@/helpers.js'
+
 export default {
   data() {
     return {
       concursos: [],
-      cores: ["purple", "indigo", "teal", "deep-purple-accent-3", "light-blue"],
+      cores: ["purple", "indigo", "teal", "pink", "light-blue", "deep-purple-accent-3"],
       dataHoje:
         String(new Date().getDate()).padStart(2, 0) +
         "/" +
@@ -118,17 +121,17 @@ export default {
         });
     },
 
-    formatarValor(valor) {
-      const valorNumerico = Number(valor);
-      if (!isNaN(valorNumerico)) {
-        return valorNumerico.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        });
-      } else {
-        return "";
-      }
-    },
+    // formatarValor(valor) {
+    //   const valorNumerico = Number(valor);
+    //   if (!isNaN(valorNumerico)) {
+    //     return valorNumerico.toLocaleString("pt-BR", {
+    //       style: "currency",
+    //       currency: "BRL",
+    //     });
+    //   } else {
+    //     return "";
+    //   }
+    // },
 
   },
 
@@ -150,10 +153,15 @@ export default {
       return total;
     },
 
+    formatarValor() {
+      return formatarValor
+    }
+
   },
 
   created() {
     this.getConcursos();
+    this.formatarValor()
   },
 };
 </script>
