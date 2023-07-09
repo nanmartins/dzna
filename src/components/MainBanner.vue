@@ -1,7 +1,7 @@
 <template>
   <!-- <v-responsive class="mt-16" color="grey-darken-4"> -->
   <div width="100vw" style="background: #1f1b16">
-    <v-container class="d-flex justify-center w-100">
+    <v-container class="d-flex justify-center">
       <!-- <v-img
         src="https://images.unsplash.com/photo-1629723515744-9ece210b6ddd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
         :max-width="1200"

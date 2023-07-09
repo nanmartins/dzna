@@ -26,8 +26,8 @@
               </div>
 
               <div class="bg-white py-4">
-                <ul v-for="(key, value) in resultado.ranking" :key="key">
-                  <h2>{{ value }} - {{ key }}</h2>
+                <ul v-for="(value, key) in resultado.ranking" :key="key">
+                  <h2>{{ key }} - {{ value }}</h2>
                 </ul>
               </div>
 

@@ -16,48 +16,56 @@
     >
     </v-list-item>
 
-    <v-list density="compact" nav>
-      <!-- <router-link to="/"> -->
+    <v-list density="compact" nav @click="rail = !rail">
+
+      <router-link to="/" @click="rail = !rail" class="text-decoration-none text-grey-lighten-1">
         <v-list-item
           prepend-icon="mdi:mdi-home"
           title="Inicio"
           value="home"
         ></v-list-item>
-      <!-- </router-link> -->
+      </router-link>
 
-      <!-- <router-link to="/concursos"> -->
+      <router-link to="/concursos" @click="rail = !rail" class="text-decoration-none text-grey-lighten-1">
         <v-list-item
           prepend-icon="mdi:mdi-calendar"
           title="Concursos"
           value="concursos"
         ></v-list-item>
-      <!-- </router-link> -->
+      </router-link>
 
-      <v-list-item
-        prepend-icon="mdi:mdi-minus"
-        title="Ganhadores"
-        value="ganhadores"
-      ></v-list-item>
+      <router-link to="/concursos" @click="rail = !rail" class="text-decoration-none text-grey-lighten-1">
+        <v-list-item
+          prepend-icon="mdi:mdi-minus"
+          title="Ganhadores"
+          value="ganhadores"
+        ></v-list-item>
+      </router-link>
+
       <v-list-item
         prepend-icon="mdi:mdi-minus"
         title="Regulamento"
         value="regulamento"
       ></v-list-item>
+
       <v-list-item
         prepend-icon="mdi:mdi-minus"
         title="Perguntas Frequentes"
         value="perguntas"
       ></v-list-item>
+
       <v-list-item
         prepend-icon="mdi:mdi-minus"
         title="Contatos"
         value="contato"
       ></v-list-item>
+
       <v-list-item
         prepend-icon="mdi:mdi-minus"
         title="Entrar"
         value="entrar"
       ></v-list-item>
+
     </v-list>
   </v-navigation-drawer>
 </template>
