@@ -1,6 +1,6 @@
 <template>
   <div class="bg-fundo">
-    <!-- <v-container class="fill-height"> -->
+    <v-container class="fill-height">
       <v-responsive class="text-center fill-height">
 
         <h1 class="mt-10">Filtros</h1>
@@ -9,7 +9,7 @@
         <v-card class="bg-fundo py-10">
 
           <div class="d-flex flex-wrap justify-center flex-colum">
-            <v-tabs v-model="filtros" centered >
+            <v-tabs v-model="filtros">
               <v-tab value="num_pule" class="mx-4 bg-blue">Buscar por Nº Pule</v-tab>
               <v-tab value="apostador_id" class="mx-4 bg-blue">Buscar por Apostador</v-tab>
               <v-tab value="num_apostado" class="mx-4 bg-blue">Buscar por Dezenas</v-tab>
@@ -46,9 +46,27 @@
             </v-window>
           </v-card-text>
 
+          <div class="d-flex flex-row align-center justify-space-around w-75 mx-auto py-2 bg-blue">
+
+            <h2>Nº Pule</h2>
+
+            <h2>Apostador</h2>
+
+            <h2>Região</h2>
+
+            <div>
+              <h3>Numeros apostados</h3>
+              <span>acertos</span>
+              <span>falta acerta</span>
+            </div>
+
+            <h2>Acertos</h2>
+
+          </div>
+
         </v-card>
       </v-responsive>
-    <!-- </v-container> -->
+    </v-container>
   </div>
 </template>
 
@@ -56,8 +74,9 @@
 export default {
   data() {
     return {
-      filtros: ''
+      filtros: null,
     }
-  }
+  },
+
 }
 </script>
