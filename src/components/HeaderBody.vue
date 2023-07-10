@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar flat color="#17130E" :height="56">
+  <v-app-bar flat color="nav" :height="56">
 
     <v-container
       :height="55"
@@ -8,7 +8,7 @@
     >
 
       <router-link to="/" class="text-white text-decoration-none px-8">
-        <v-app-bar-title>Navbar</v-app-bar-title>
+        <v-app-bar-title class="text-grey-lighten-1">Navbar</v-app-bar-title>
       </router-link>
 
       <v-btn variant="text" class="mr-2">

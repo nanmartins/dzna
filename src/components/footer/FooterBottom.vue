@@ -1,7 +1,7 @@
 <template>
   <v-row class="pa-0 ma-0 py-10 px-12">
     <v-col cols="3" class="pa-0 ma-0">
-      <v-card flat class="column-left" outlined color="#17130E">
+      <v-card flat class="column-left bg-nav">
         <div>
           <!-- <v-card class="px-0 py-0" color="#17130E"> -->
           <v-card-title class="px-0 py-0 mb-10 text-h4">Footer</v-card-title>
@@ -29,7 +29,7 @@
             </v-row>
           </div>
 
-          <v-card color="#17130E" class="pa-0 ma-0">
+          <v-card class="pa-0 ma-0 bg-nav">
             <v-icon
               icon="mdi:mdi-toggle-switch"
               color="yellow-darken-2"
@@ -43,17 +43,17 @@
 
     <!-- ////// FOOTER BOTTOM - MID ////// -->
     <v-col min-width="400px" class="pa-0 ma-0">
-      <v-card flat class="column-center" color="#17130E" outlined>
+      <v-card flat class="column-center bg-nav">
         <!-- <v-col class="px-4 py-0 my-0"> -->
         <!-- <v-card flat color="#17130E"> -->
-        <v-card-text class="py-0 text-body-1 text-justify row-height">
+        <v-card-text class="pt-0 text-body-1 text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
           delectus praesentium error numquam aut amet laudantium deleniti non
           dignissimos laboriosam, doloribus dolorem excepturi facilis nesciunt!
           Ad sunt dolore temporibus eaque?
         </v-card-text>
 
-        <v-card-text color="#616161" class="text-body-1 text-justify">
+        <v-card-text class="text-body-1 text-justify">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
           perspiciatis aliquid veritatis tempora! Dolorum, officia! Ut quo fugit
           voluptatibus facere maxime ab eaque voluptates, natus dolores
@@ -70,7 +70,7 @@
     </v-col>
 
     <v-col cols="3" class="pa-0 ma-0">
-      <v-card flat class="column-right" color="#17130E" outlined>
+      <v-card flat class="column-right bg-nav" outlined>
         <div width="250px">
           <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0"
             >Lorem Ipsum</v-card-text

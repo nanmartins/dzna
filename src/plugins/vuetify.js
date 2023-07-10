@@ -30,7 +30,8 @@ export default createVuetify({
         colors: {
           primary: '#1867C0',
           secondary: '#5CBBF6',
-          fundo: '#1f1b16'
+          fundo: '#1f1b16',
+          nav: '#17130E',
         },
       },
     },

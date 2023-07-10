@@ -1,5 +1,5 @@
 <template>
-  <div width="100vw" style="background: #1f1b16">
+  <div width="100vw" class="bg-fundo">
     <v-container class="fill-height">
       <v-responsive class="align-center text-center fill-height">
         <div v-for="concurso in concursos" :key="concurso.id">

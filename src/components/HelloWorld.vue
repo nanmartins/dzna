@@ -1,5 +1,5 @@
 <template>
-  <v-container class="fill-height" color="#212121">
+  <v-container class="fill-height">
     <v-responsive class="align-center text-center fill-height">
       <div v-for="(concurso) in concursos" :key="concurso.id">
         <!-- {{ concurso }} -->

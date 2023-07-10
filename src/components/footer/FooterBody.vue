@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="#17130E" class="py-0 px-0">
+  <v-footer class="py-0 px-0 bg-nav">
     <v-container
       width="70vw"
       class="d-flex justify-center align-center px-15 py-0"
@@ -32,8 +32,8 @@
         <v-divider :thickness="2" class="mx-12"></v-divider>
 
         <!-- /////////////////////   FOOTER BOTTOM  ////////////////////// -->
-
         <FooterBottom />
+
       </v-row>
     </v-container>
 
@@ -44,17 +44,4 @@
 <script setup>
 import FooterBottom from "@/components/footer/FooterBottom.vue";
 
-// const links = ["Sobre", "Contato", "Endereco"]
-
-// export default {
-//   name: "FooterBody",
-//   components: {
-//     FooterBottom,
-//   },
-//   data() {
-//     return {
-//       links: ["Sobre", "Contato", "Endereco"],
-//     };
-//   },
-// };
 </script>

@@ -2,11 +2,10 @@
   <v-navigation-drawer
     v-model="drawer"
     :rail="rail"
-    color="#1F1B16"
     permanent
     @click="rail = !rail"
     style="height: fit-content"
-    class="py-4 rounded-be-xl"
+    class="py-4 rounded-be-xl bg-fundo"
   >
     <v-list-item
       prepend-icon="mdi:mdi-menu"
@@ -16,9 +15,9 @@
     >
     </v-list-item>
 
-    <v-list density="compact" nav @click="rail = !rail">
+    <v-list density="compact" nav @click="rail = false">
 
-      <router-link to="/" @click="rail = !rail" class="text-decoration-none text-grey-lighten-1">
+      <router-link to="/" class="text-decoration-none text-grey-lighten-1">
         <v-list-item
           prepend-icon="mdi:mdi-home"
           title="Inicio"
@@ -26,7 +25,7 @@
         ></v-list-item>
       </router-link>
 
-      <router-link to="/concursos" @click="rail = !rail" class="text-decoration-none text-grey-lighten-1">
+      <router-link to="/concursos" class="text-decoration-none text-grey-lighten-1">
         <v-list-item
           prepend-icon="mdi:mdi-calendar"
           title="Concursos"
@@ -34,7 +33,7 @@
         ></v-list-item>
       </router-link>
 
-      <router-link to="/concursos" @click="rail = !rail" class="text-decoration-none text-grey-lighten-1">
+      <router-link to="/concursos" class="text-decoration-none text-grey-lighten-1">
         <v-list-item
           prepend-icon="mdi:mdi-minus"
           title="Ganhadores"

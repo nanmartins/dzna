@@ -1,7 +1,7 @@
 <template>
-  <div style="background: #1f1b16">
-    <v-container class="fill-height">
-      <v-responsive class="align-center text-center fill-height">
+  <div class="bg-fundo">
+    <v-container>
+      <v-responsive class="align-center text-center">
 
         <h2 class="text-h4 font-weight-bold py-10">{{ resultados.length }} Resultados</h2>
 
@@ -10,7 +10,7 @@
           <div
             v-for="(resultado) in resultados"
             :key="resultado.id"
-            class="col col-12 col-sm-6 col-md-4 col-lg-4 d-flex flex-row align-center justify-center"
+            class="d-flex flex-row align-center justify-center"
           >
             <v-card class="d-flex flex-column ma-2 px-1 bg-grey-darken-1">
 
@@ -25,7 +25,7 @@
                 </v-card-text>
               </div>
 
-              <div class="bg-white py-4">
+              <div class="bg-grey-lighten-3 py-4">
                 <ul v-for="(value, key) in resultado.ranking" :key="key">
                   <h2>{{ key }} - {{ value }}</h2>
                 </ul>
