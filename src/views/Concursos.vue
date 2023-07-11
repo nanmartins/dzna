@@ -1,7 +1,7 @@
 <template>
   <MainBanner />
-  <!-- <PremiacaoCard />
-  <ResultadosCard /> -->
+  <PremiacaoCard />
+  <ResultadosCard />
   <FiltrosCard />
 </template>
 
