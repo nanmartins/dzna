@@ -4,9 +4,9 @@
       <v-responsive class="text-center fill-height">
 
         <h1 class="mt-10">Filtros</h1>
-        {{ filtros }}
-        {{ busca }}
-        {{ vencedores }}
+        <!-- {{ filtros }} -->
+        <!-- {{ busca }} -->
+        <!-- {{ vencedores }} -->
 
         <v-card class="bg-fundo py-10">
 
@@ -48,7 +48,69 @@
             </v-window>
           </v-card-text>
 
-          <div class="d-flex flex-row align-center justify-space-around w-75 mx-auto py-2 bg-blue">
+        <div class="d-flex justify-center">
+          <v-table class="w-75 rounded-lg">
+            <thead class="bg-blue">
+              <tr>
+                <th class="text-center text-white">
+                  Nº Pule
+                </th>
+                <th class="text-center text-white">
+                  Nome
+                </th>
+                <th class="text-center text-white">
+                  Cidade
+                </th>
+                <th class="text-center text-white">
+                  Dezenas Apostadas
+                </th>
+                <th class="text-center text-white">
+                  Acertos
+                </th>
+              </tr>
+            </thead>
+
+            <tbody class="bg-contraste">
+              <tr
+                v-for="(apostador, index) in vencedores.apostadores"
+                :key="apostador.id"
+                :class="{
+                  'bg-grey-darken-4' : index % 2 === 0
+                }"
+              >
+                <td>{{ apostador.num_pule }}</td>
+                <td>{{ apostador.nome }}</td>
+                <td>{{ apostador.cidade }}</td>
+                <td>
+                  <div class="d-flex flex-wrap justify-center">
+                    <h4 v-for="(numero) in apostador.num_apostado" :key="numero.id">
+                      <span
+                        :class="{
+                          'd-inline-block rounded-circle bg-yellow pa-1 ma-1': this.vencedores.num_sorteados.includes(numero),
+                          'd-inline-block rounded-circle bg-white pa-1 ma-1': !this.vencedores.num_sorteados.includes(numero)
+                          }"
+                      >
+                        {{ numero }}
+                      </span>
+                    </h4>
+                  </div>
+                </td>
+                <td>
+                  <span class="bg-blue pa-2 rounded-lg">
+                  {{ qtdAcertos(apostador.num_apostado)}}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </v-table>
+
+        </div>
+
+
+
+          <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+          <!-- <div class="d-flex flex-row align-center justify-space-around w-75 mx-auto py-2 bg-blue">
 
             <h2>Nº Pule</h2>
 
@@ -66,23 +128,36 @@
 
             <h2>Acertos</h2>
 
-          </div>
+          </div> -->
 
-          <div v-for="(sorteados) in vencedores.num_sorteados" :key="sorteados.id">
+
+          <!-- <div v-for="(sorteados) in vencedores.num_sorteados" :key="sorteados.id">
             {{ sorteados }}
           </div>
           <div v-for="(filtro) in vencedores.apostadores" :key="filtro.id">
+            {{ filtro.num_pule }}
+
+            <div v-if="vencedores.num_sorteados === filtro.num_apostado">IGUAL</div>
             <h2>{{ filtro.num_pule }}</h2>
             <h2>{{ filtro.nome }}</h2>
             <h2>{{ filtro.cidade }}</h2>
-            <h2 v-for="(numero) in filtro.num_apostado" :key="numero.id">
-              <span>{{ numero }}</span>
-            </h2>
-            <!-- <h2>{{ qtdAcertos(sorteados, numero)}}</h2> -->
+            <div class="d-flex flex-wrap justify-center">
+              <h4 v-for="(numero) in filtro.num_apostado" :key="numero.id">
+                <span
+                  :class="{
+                    'd-inline-block rounded-circle bg-yellow pa-1 ma-1': this.vencedores.num_sorteados.includes(numero),
+                    'd-inline-block rounded-circle bg-white pa-1 ma-1': !this.vencedores.num_sorteados.includes(numero)
+                    }"
+                >
+                  {{ numero }}
+                </span>
+              </h4>
+            </div>
+
+            <h2>{{ qtdAcertos(filtro.num_apostado)}}</h2>
 
 
-
-          </div>
+          </div> -->
 
 
         </v-card>
@@ -97,7 +172,7 @@ export default {
     return {
       filtros: '',
       busca: '',
-      vencedores: {}
+      vencedores: []
     }
   },
 
@@ -106,20 +181,27 @@ export default {
       fetch('http://localhost:3000/filtros')
       .then(response => response.json())
       .then(data => {
-        // console.log(data[0].apostadores)
+        console.log(data[0].apostadores)
         this.vencedores = data[0]
       })
     },
 
-    // qtdAcertos(arr1, arr2) {
-    //   let contador = 0;
-    //   for (let i = 0; i < arr1.length; i++) {
-    //     if (arr1[i] === arr2[i]) {
-    //       contador++;
-    //     }
-    //   }
 
-    //   return contador;
+
+    qtdAcertos(array) {
+      let contador = 0;
+      const sorteados = this.vencedores.num_sorteados
+      for (let i = 0; i < sorteados.length; i++) {
+        if (sorteados[i] === array[i]) {
+          contador++;
+        }
+      }
+
+      return contador;
+    },
+
+    // numerosAcertados() {
+
     // },
 
     buscarFiltro() {
@@ -129,7 +211,6 @@ export default {
 
   created() {
     this.getVencedores()
-    // this.qtdAcertos()
   }
 
 }

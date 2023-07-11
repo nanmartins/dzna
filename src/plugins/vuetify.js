@@ -32,6 +32,7 @@ export default createVuetify({
           secondary: '#5CBBF6',
           fundo: '#1f1b16',
           nav: '#17130E',
+          contraste: '#28241F'
         },
       },
     },

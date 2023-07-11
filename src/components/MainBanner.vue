@@ -12,7 +12,7 @@
       <div class="d-flex justify-center align-center px-10 py-0">
         <v-card width="75vw" height="220px" class="mx-auto mt-14">
           <v-card-title
-            class="d-flex align-center justify-center mx-auto my-auto h-100 text-h1"
+            class="d-flex align-center justify-center mx-auto my-auto h-100 text-h1 bg-contraste"
             >BANNER</v-card-title
           >
         </v-card>
