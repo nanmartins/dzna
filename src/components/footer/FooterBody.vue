@@ -1,8 +1,7 @@
 <template>
   <v-footer class="py-0 px-0 bg-nav">
     <v-container
-      width="70vw"
-      class="d-flex justify-center align-center px-15 py-0"
+      class="d-flex justify-center align-center py-0"
     >
       <!-- //////////////////////   FOOTER TOP  //////////////////////////// -->
       <v-row class="pa-0 ma-0">
@@ -29,7 +28,7 @@
         </v-col>
 
         <!-- //////////////////////   DIVIDER  ////////////////// -->
-        <v-divider :thickness="2" class="mx-12"></v-divider>
+        <v-divider :thickness="2"></v-divider>
 
         <!-- /////////////////////   FOOTER BOTTOM  ////////////////////// -->
         <FooterBottom />

@@ -1,31 +1,90 @@
 <template>
+<div>
+
+  <!-- <side-nav v-if="isMobile" v-model="navActive"></side-nav> -->
+
   <v-app-bar flat color="nav" :height="56">
 
     <v-container
       :height="55"
-      width="75vw"
-      class="d-flex justify-space-between align-center px-10 py-0"
+      class="d-flex justify-space-between align-center py-0"
     >
 
-      <router-link to="/" class="text-white text-decoration-none px-8">
+      <div v-if="isMobile">
+        <v-app-bar-nav-icon
+          icon="mdi:mdi-menu"
+          @click.stop="drawer = !drawer"
+          class="text-grey-lighten-1"
+        ></v-app-bar-nav-icon>
+      </div>
+
+      <router-link to="/" class="text-white text-decoration-none px-6">
         <v-app-bar-title class="text-grey-lighten-1">Navbar</v-app-bar-title>
       </router-link>
 
-      <v-btn variant="text" class="mr-2">
-        <v-icon
-          icon="mdi:mdi-account-circle-outline"
-          size="24"
-          color="grey-lighten-1"
-        ></v-icon>
-      </v-btn>
-
+      <v-app-bar-nav-icon
+        icon="mdi:mdi-account-circle-outline"
+        class="text-grey-lighten-1"
+      ></v-app-bar-nav-icon>
 
     </v-container>
 
   </v-app-bar>
 
+  <div>
+    <v-navigation-drawer
+    v-model="drawer"
+    location="left"
+    class="bg-fundo"
+    temporary
+    >
+      <NavLinks />
+    </v-navigation-drawer>
+  </div>
+
+</div>
+
+
 </template>
 
-<script setup>
+<script>
+import NavLinks from './NavLinks.vue'
 
+export default {
+  name: 'HeaderBody',
+  components: {
+    NavLinks
+  },
+  data() {
+    return {
+      drawer: false,
+      clienteWidth: window.innerWidth
+    }
+  },
+
+  methods: {
+    handleResize() {
+      this.clienteWidth = window.innerWidth
+    }
+  },
+
+  mounted() {
+    window.addEventListener('resize', this.handleResize)
+  },
+
+  // beforeUnmount() {
+  //   window.removeEventListener('resize', this.handleResize)
+  // },
+
+  computed: {
+    isMobile() {
+      return this.clienteWidth < 1280
+    }
+  },
+
+  created() {
+    this.handleResize()
+  }
+
+}
 </script>

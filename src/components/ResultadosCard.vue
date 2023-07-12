@@ -12,7 +12,7 @@
             :key="resultado.id"
             class="d-flex flex-row align-center justify-center"
           >
-            <v-card class="d-flex flex-column ma-2 px-1 bg-grey-darken-3">
+            <v-card class="d-flex flex-column ma-2 px-1 bg-grey-darken-3 rounded-lg">
 
               <div class="pa-4">
                 <v-card-subtitle class="text-h6">

@@ -2,7 +2,7 @@
   <v-app>
     <HeaderBody />
     <SideNav />
-    <router-view />
+      <router-view />
     <FooterBody />
   </v-app>
 </template>

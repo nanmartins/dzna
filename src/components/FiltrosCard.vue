@@ -22,25 +22,25 @@
           <v-card-text>
             <v-window v-model="filtros">
               <v-window-item value="num_pule" v-if="mostrarForm">
-                <v-text-field v-model="busca" name="num_pule" label="Digite o numero da Pule" class="w-50 mx-auto" dense></v-text-field>
+                <v-text-field v-model="busca" name="num_pule" label="Digite o numero da Pule" class="w-75 mx-auto" dense></v-text-field>
                 <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
                 <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
               </v-window-item>
 
               <v-window-item value="apostador_id" v-if="mostrarForm">
-                <v-text-field v-model="busca" label="Nome do apostador" class="w-50 mx-auto" dense></v-text-field>
+                <v-text-field v-model="busca" label="Nome do apostador" class="w-75 mx-auto" dense></v-text-field>
                 <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
                 <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
               </v-window-item>
 
               <v-window-item value="num_apostado" v-if="mostrarForm">
-                <v-text-field v-model="busca" label="Digite as 10 dezenas" class="w-50 mx-auto" dense></v-text-field>
+                <v-text-field v-model="busca" label="Digite as 10 dezenas" class="w-75 mx-auto" dense></v-text-field>
                 <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
                 <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
               </v-window-item>
 
               <v-window-item value="regiao_id" v-if="mostrarForm">
-                <v-text-field v-model="busca" label="Selecione a cidade" class="w-50 mx-auto" dense></v-text-field>
+                <v-text-field v-model="busca" label="Selecione a cidade" class="w-75 mx-auto" dense></v-text-field>
                 <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
                 <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
               </v-window-item>
@@ -50,7 +50,7 @@
 
           <div class="d-flex justify-center">
 
-            <v-table class="w-75 rounded-lg mb-16">
+            <v-table class="w-100 rounded-lg mb-16">
               <thead class="bg-blue">
                 <tr>
                   <th class="text-center text-white py-6">

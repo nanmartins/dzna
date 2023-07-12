@@ -2,7 +2,6 @@
   <v-navigation-drawer
     v-model="drawer"
     :rail="rail"
-    permanent
     @click="rail = !rail"
     style="height: fit-content"
     class="py-4 rounded-be-xl bg-fundo"
@@ -11,72 +10,31 @@
       prepend-icon="mdi:mdi-menu"
       :width="24"
       style="cursor: pointer"
-      class="pl-4 py-6"
+      class="pl-4 pt-6"
     >
     </v-list-item>
 
-    <v-list density="compact"  @click="rail = false">
+    <v-list density="compact" @click="rail = false">
 
-      <router-link to="/" class="text-decoration-none text-grey-lighten-1">
-        <v-list-item
-          prepend-icon="mdi:mdi-home"
-          title="Inicio"
-          value="home"
-        ></v-list-item>
-      </router-link>
-
-      <router-link to="/concursos" class="text-decoration-none text-grey-lighten-1">
-        <v-list-item
-          prepend-icon="mdi:mdi-calendar"
-          title="Concursos"
-          value="concursos"
-        ></v-list-item>
-      </router-link>
-
-      <router-link to="/concursos" class="text-decoration-none text-grey-lighten-1">
-        <v-list-item
-          prepend-icon="mdi:mdi-minus"
-          title="Ganhadores"
-          value="ganhadores"
-        ></v-list-item>
-      </router-link>
-
-      <v-list-item
-        prepend-icon="mdi:mdi-minus"
-        title="Regulamento"
-        value="regulamento"
-      ></v-list-item>
-
-      <v-list-item
-        prepend-icon="mdi:mdi-minus"
-        title="Perguntas Frequentes"
-        value="perguntas"
-      ></v-list-item>
-
-      <v-list-item
-        prepend-icon="mdi:mdi-minus"
-        title="Contatos"
-        value="contato"
-      ></v-list-item>
-
-      <v-list-item
-        prepend-icon="mdi:mdi-minus"
-        title="Entrar"
-        value="entrar"
-      ></v-list-item>
+      <NavLinks />
 
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
+import NavLinks from './NavLinks.vue'
+
 export default {
   name: "SideNav",
+  components: {
+    NavLinks
+  },
   data() {
     return {
       rail: true,
-      drawer: "",
-    };
-  },
-};
+      drawer: '',
+    }
+  }
+}
 </script>

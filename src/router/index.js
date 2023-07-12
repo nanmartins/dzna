@@ -22,10 +22,12 @@ const routes = [
   {
     path: '/concursos',
     component: () => import('@/layouts/default/Default.vue'),
+    props: true,
     children: [
       {
         path: '',
         name: 'Concursos',
+        props: true,
         component: () => import('@/views/Concursos.vue'),
       }
     ]

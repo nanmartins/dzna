@@ -4,11 +4,11 @@
       <v-responsive class="align-center text-center fill-height">
         <div v-for="concurso in concursos" :key="concurso.id">
           <!-- {{ concurso }} -->
-          <h1 class="text-h3 font-weight-bold mt-10">
+          <h1 class="text-h4 text-md-h3 font-weight-bold mt-10">
             {{ concurso.tipo_concurso.descricao }}
           </h1>
-          <h3 class="text-h5 font-weight-light mb-6">{{ concurso.tipo_apuracao.descricao }}</h3>
-          <h4 class="text-h5 font-weight-bold">
+          <h3 class="text-h6 text-md-h5 font-weight-light mb-6">{{ concurso.tipo_apuracao.descricao }}</h3>
+          <h4 class="text-h6 text-md-h5 font-weight-bold">
             Concurso: {{ concurso.id }}
             <span
               v-if="concurso.dt_final <= dataHoje || concurso.desativado === 'true'"
@@ -131,7 +131,6 @@ export default {
       fetch("http://localhost:3000/concursos")
         .then((response) => response.json())
         .then((data) => {
-          // console.log(data[0].bolao)
           this.concursos = data;
         });
     },
