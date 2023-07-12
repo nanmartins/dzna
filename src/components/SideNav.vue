@@ -15,7 +15,7 @@
     >
     </v-list-item>
 
-    <v-list density="compact" nav @click="rail = false">
+    <v-list density="compact"  @click="rail = false">
 
       <router-link to="/" class="text-decoration-none text-grey-lighten-1">
         <v-list-item

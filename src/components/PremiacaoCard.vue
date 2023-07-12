@@ -4,22 +4,20 @@
       <v-responsive class="align-center text-center fill-height">
         <div v-for="concurso in concursos" :key="concurso.id">
           <!-- {{ concurso }} -->
-          <h2 class="text-h4 font-weight-bold">
+          <h1 class="text-h3 font-weight-bold mt-10">
             {{ concurso.tipo_concurso.descricao }}
-          </h2>
-          <h4>{{ concurso.tipo_apuracao.descricao }}</h4>
-          <h4>
+          </h1>
+          <h3 class="text-h5 font-weight-light mb-6">{{ concurso.tipo_apuracao.descricao }}</h3>
+          <h4 class="text-h5 font-weight-bold">
             Concurso: {{ concurso.id }}
             <span
-              v-if="
-                concurso.dt_final <= dataHoje || concurso.desativado === 'true'
-              "
-              class="bg-red py-1 px-2 rounded ml-2"
-              >Finalizado</span
-            >
+              v-if="concurso.dt_final <= dataHoje || concurso.desativado === 'true'"
+              class="bg-red py-1 px-3 rounded ml-2"
+            >Finalizado</span>
             <span v-else class="bg-green py-1 px-2 rounded ml-2">Ativo</span>
           </h4>
-          <h4>
+
+          <h4 class="text-h6 py-4">
             Início do Concurso:
             <span v-if="concurso.tipo_concurso.descricao.includes('Sabado')"
               >Sábado,
@@ -27,7 +25,7 @@
             {{ concurso.dt_final }} as {{ concurso.hr_inicio.substring(0, 5) }}h
           </h4>
 
-          <h1>
+          <h1 class="text-h3 font-weight-bold py-4">
             {{ formatarValor(totalPremios) }} em
             {{ Object.keys(concurso.bolao).length }} premiações
           </h1>
@@ -53,17 +51,14 @@
                 <div
                   class="position-absolute text-h4"
                   style="
-                    top: 8px;
-                    right: 58px;
-                    transform: translate(100%, -100%) rotate(7deg);
-                  "
+                    top: 20px;
+                    right: 106px;
+                    transform: translate(100%, -100%) rotate(5deg);"
                 >
-                  <v-badge
+                  <span
                     v-if="bolao.finalizado === 'false'"
-                    class="w-25"
-                    color="green"
-                    content="Acumulado!"
-                  ></v-badge>
+                    class="bg-green rounded-lg px-3 py-1 text-body-1 font-weight-bold"
+                  >Acumulado!</span>
                 </div>
 
                 <v-card-title class="text-h4 py-8 font-weight-black">

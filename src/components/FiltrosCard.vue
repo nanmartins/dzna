@@ -3,19 +3,19 @@
     <v-container class="fill-height">
       <v-responsive class="text-center fill-height">
 
-        <h1 class="mt-10">Filtros</h1>
+        <h1 class="text-h3 font-weight-bold py-10 mt-10">Filtros</h1>
         <!-- {{ filtros }} -->
         <!-- {{ busca }} -->
         <!-- {{ vencedores }} -->
 
-        <v-card class="bg-fundo py-10">
+        <v-card class="bg-fundo">
 
           <div class="d-flex flex-wrap justify-center flex-colum">
             <v-tabs v-model="filtros">
-              <v-tab value="num_pule" @click="mostrarForm = true" class="mx-4 bg-blue">Buscar por Nº Pule</v-tab>
-              <v-tab value="apostador_id" @click="mostrarForm = true" class="mx-4 bg-blue">Buscar por Apostador</v-tab>
-              <v-tab value="num_apostado" @click="mostrarForm = true" class="mx-4 bg-blue">Buscar por Dezenas</v-tab>
-              <v-tab value="regiao_id" @click="mostrarForm = true" class="mx-4 bg-blue">Buscar por Cidade</v-tab>
+              <v-tab value="num_pule" @click="mostrarForm = true" class="text-h6 mx-4 bg-blue">Buscar por Nº Pule</v-tab>
+              <v-tab value="apostador_id" @click="mostrarForm = true" class="text-h6 mx-4 bg-blue">Buscar por Apostador</v-tab>
+              <v-tab value="num_apostado" @click="mostrarForm = true" class="text-h6 mx-4 bg-blue">Buscar por Dezenas</v-tab>
+              <v-tab value="regiao_id" @click="mostrarForm = true" class="text-h6 mx-4 bg-blue">Buscar por Cidade</v-tab>
             </v-tabs>
           </div>
 
@@ -50,10 +50,10 @@
 
           <div class="d-flex justify-center">
 
-            <v-table class="w-75 rounded-lg">
+            <v-table class="w-75 rounded-lg mb-16">
               <thead class="bg-blue">
                 <tr>
-                  <th class="text-center text-white">
+                  <th class="text-center text-white py-6">
                     <h3>Nº Pule</h3>
                   </th>
                   <th class="text-center text-white">
@@ -99,7 +99,7 @@
                     </div>
                   </td>
                   <td>
-                    <span class="bg-blue pa-2 rounded-lg font-weight-bold">
+                    <span class="bg-blue py-2 px-3 rounded-lg font-weight-bold text-h6">
                       {{ qtdAcertos(apostador.num_apostado, apostador.num_sorteados)}}
                     </span>
                   </td>
