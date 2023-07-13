@@ -1,21 +1,21 @@
 <template>
   <div class="bg-fundo">
-    <v-container class="fill-height">
-      <v-responsive class="text-center fill-height">
+    <v-container class="text-center">
+      <!-- <v-responsive class="text-center fill-height"> -->
 
-        <h1 class="text-h3 font-weight-bold py-10 mt-10">Filtros</h1>
+        <h1 class="text-h4 text-md-3 font-weight-bold py-10 mt-md-10">Filtros</h1>
         <!-- {{ filtros }} -->
         <!-- {{ busca }} -->
         <!-- {{ vencedores }} -->
 
-        <v-card class="bg-fundo">
+        <v-card class="bg-fundo" flat>
 
           <div class="d-flex flex-wrap justify-center flex-colum">
             <v-tabs v-model="filtros">
-              <v-tab value="num_pule" @click="mostrarForm = true" class="text-h6 mx-4 bg-blue">Buscar por Nº Pule</v-tab>
-              <v-tab value="apostador_id" @click="mostrarForm = true" class="text-h6 mx-4 bg-blue">Buscar por Apostador</v-tab>
-              <v-tab value="num_apostado" @click="mostrarForm = true" class="text-h6 mx-4 bg-blue">Buscar por Dezenas</v-tab>
-              <v-tab value="regiao_id" @click="mostrarForm = true" class="text-h6 mx-4 bg-blue">Buscar por Cidade</v-tab>
+              <v-tab value="num_pule" @click="mostrarForm = true" class="text-body-2 text-md-h6 mx-2 mx-md-4 bg-blue">Buscar Nº Pule</v-tab>
+              <v-tab value="apostador_id" @click="mostrarForm = true" class="text-body-2 text-md-h6 mx-2 mx-md-4 bg-blue">Buscar Apostador</v-tab>
+              <v-tab value="num_apostado" @click="mostrarForm = true" class="text-body-2 text-md-h6 mx-2 mx-md-4 bg-blue">Buscar Dezenas</v-tab>
+              <v-tab value="regiao_id" @click="mostrarForm = true" class="text-body-2 text-md-h6 mx-2 mx-md-4 bg-blue">Buscar Cidade</v-tab>
             </v-tabs>
           </div>
 
@@ -48,9 +48,9 @@
             </v-window>
           </v-card-text>
 
-          <div class="d-flex justify-center">
+          <div class="d-flex justify-center mb-10">
 
-            <v-table class="w-100 rounded-lg mb-16">
+            <v-table class="w-100 rounded-lg bg-fundo">
               <thead class="bg-blue">
                 <tr>
                   <th class="text-center text-white py-6">
@@ -91,7 +91,7 @@
                           :class="{
                             'd-inline-block rounded-circle bg-yellow pa-1 ma-1': apostador.num_sorteados.includes(numero),
                             'd-inline-block rounded-circle bg-white pa-1 ma-1': !apostador.num_sorteados.includes(numero)
-                            }"
+                          }"
                         >
                           {{ numero }}
                         </span>
@@ -110,7 +110,7 @@
           </div>
 
         </v-card>
-      </v-responsive>
+      <!-- </v-responsive> -->
     </v-container>
   </div>
 </template>

@@ -1,10 +1,19 @@
 <template>
   <div width="100vw" class="bg-fundo">
-    <v-container class="fill-height">
-      <v-responsive class="align-center text-center fill-height">
-        <div v-for="concurso in concursos" :key="concurso.id">
+    <v-container>
+      <!-- <v-responsive class="align-center text-center fill-height"> -->
+      <v-col
+        :cols="12"
+        :md="12"
+        :lg="8"
+        :xl="12"
+        :xxl="12"
+        class="mx-auto"
+      >
+
+        <div v-for="concurso in concursos" :key="concurso.id" class="text-center mx-auto">
           <!-- {{ concurso }} -->
-          <h1 class="text-h4 text-md-h3 font-weight-bold mt-10">
+          <h1 class="text-h4 text-md-h3 font-weight-bold">
             {{ concurso.tipo_concurso.descricao }}
           </h1>
           <h3 class="text-h6 text-md-h5 font-weight-light mb-6">{{ concurso.tipo_apuracao.descricao }}</h3>
@@ -14,18 +23,18 @@
               v-if="concurso.dt_final <= dataHoje || concurso.desativado === 'true'"
               class="bg-red py-1 px-3 rounded ml-2"
             >Finalizado</span>
-            <span v-else class="bg-green py-1 px-2 rounded ml-2">Ativo</span>
+            <span v-else class="bg-green py-1 px-3 rounded ml-2">Ativo</span>
           </h4>
 
-          <h4 class="text-h6 py-4">
+          <h4 class="text-body-1 py-4">
             Início do Concurso:
-            <span v-if="concurso.tipo_concurso.descricao.includes('Sabado')"
+            <span v-if="concurso.tipo_concurso.descricao.includes('Sabádo')"
               >Sábado,
             </span>
             {{ concurso.dt_final }} as {{ concurso.hr_inicio.substring(0, 5) }}h
           </h4>
 
-          <h1 class="text-h3 font-weight-bold py-4">
+          <h1 class="text-h5 text-md-h3 font-weight-bold py-4">
             {{ formatarValor(totalPremios) }} em
             {{ Object.keys(concurso.bolao).length }} premiações
           </h1>
@@ -34,13 +43,13 @@
             <div
               v-for="(bolao, index) in concurso.bolao"
               :key="bolao.id"
-              class="d-flex flex-row align-center justify-center"
+              class="d-flex align-center justify-center"
             >
               <v-card
                 :class="[
                   'd-flex',
                   'flex-column',
-                  'ma-2',
+                  'mx-2 my-4',
                   'position-relative',
                   `bg-${this.cores[index]}`,
                 ]"
@@ -68,12 +77,12 @@
                 <div
                   class="d-flex flex-column align-center rounded bg-grey-lighten-2 mx-2 py-12"
                 >
-                  <v-card-subtitle class="text-h4 pa-6 font-weight-black">{{
-                    bolao.tipo_bolao
-                  }}</v-card-subtitle>
-                  <v-card-text class="text-subtitle-1 py-2">{{
-                    bolao.descricao
-                  }}</v-card-text>
+                  <v-card-subtitle class="text-h4 pa-6 font-weight-black">
+                    {{ bolao.tipo_bolao }}
+                  </v-card-subtitle>
+                  <v-card-text class="text-subtitle-1 py-2">
+                    {{ bolao.descricao }}
+                  </v-card-text>
                 </div>
 
                 <div
@@ -103,7 +112,9 @@
             </div>
           </div>
         </div>
-      </v-responsive>
+
+      </v-col>
+      <!-- </v-responsive> -->
     </v-container>
   </div>
 </template>

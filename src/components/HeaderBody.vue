@@ -1,8 +1,6 @@
 <template>
 <div>
 
-  <!-- <side-nav v-if="isMobile" v-model="navActive"></side-nav> -->
-
   <v-app-bar flat color="nav" :height="56">
 
     <v-container
@@ -58,7 +56,7 @@ export default {
   data() {
     return {
       drawer: false,
-      clienteWidth: window.innerWidth
+      clienteWidth: null
     }
   },
 

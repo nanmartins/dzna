@@ -15,10 +15,9 @@
     </v-list-item>
 
     <v-list density="compact" @click="rail = false">
-
-      <NavLinks />
-
+        <NavLinks />
     </v-list>
+
   </v-navigation-drawer>
 </template>
 
@@ -35,6 +34,6 @@ export default {
       rail: true,
       drawer: '',
     }
-  }
+  },
 }
 </script>
