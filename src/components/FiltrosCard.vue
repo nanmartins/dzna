@@ -1,46 +1,55 @@
 <template>
   <div class="bg-fundo">
-    <v-container class="text-center">
-      <!-- <v-responsive class="text-center fill-height"> -->
+    <v-container class="text-center px-1 px-md-2">
 
         <h1 class="text-h4 text-md-3 font-weight-bold py-10 mt-md-10">Filtros</h1>
-        <!-- {{ filtros }} -->
-        <!-- {{ busca }} -->
-        <!-- {{ vencedores }} -->
 
         <v-card class="bg-fundo" flat>
 
-          <div class="d-flex flex-wrap justify-center flex-colum">
+          <div class="d-flex justify-center flex-colum">
             <v-tabs v-model="filtros">
-              <v-tab value="num_pule" @click="mostrarForm = true" class="text-body-2 text-md-h6 mx-2 mx-md-4 bg-blue">Buscar Nº Pule</v-tab>
-              <v-tab value="apostador_id" @click="mostrarForm = true" class="text-body-2 text-md-h6 mx-2 mx-md-4 bg-blue">Buscar Apostador</v-tab>
-              <v-tab value="num_apostado" @click="mostrarForm = true" class="text-body-2 text-md-h6 mx-2 mx-md-4 bg-blue">Buscar Dezenas</v-tab>
-              <v-tab value="regiao_id" @click="mostrarForm = true" class="text-body-2 text-md-h6 mx-2 mx-md-4 bg-blue">Buscar Cidade</v-tab>
+
+              <v-tab value="num_pule" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue filtro-btn">
+                Buscar <br> Nº Pule
+              </v-tab>
+
+              <v-tab value="apostador_id" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue filtro-btn">
+                Buscar <br> Apostador
+              </v-tab>
+
+              <v-tab value="num_apostado" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue filtro-btn">
+                Buscar <br> Dezenas
+              </v-tab>
+
+              <v-tab value="regiao_id" @click="mostrarForm = true" class="text-caption text-md-h6 mx-md-4 bg-blue filtro-btn">
+                Buscar <br> Cidade
+              </v-tab>
+
             </v-tabs>
           </div>
 
           <v-card-text>
             <v-window v-model="filtros">
               <v-window-item value="num_pule" v-if="mostrarForm">
-                <v-text-field v-model="busca" name="num_pule" label="Digite o numero da Pule" class="w-75 mx-auto" dense></v-text-field>
+                <v-text-field v-model="busca" name="num_pule" label="Digite o numero da Pule" class="w-100 mx-auto" dense></v-text-field>
                 <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
                 <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
               </v-window-item>
 
               <v-window-item value="apostador_id" v-if="mostrarForm">
-                <v-text-field v-model="busca" label="Nome do apostador" class="w-75 mx-auto" dense></v-text-field>
+                <v-text-field v-model="busca" label="Nome do apostador" class="w-100 mx-auto" dense></v-text-field>
                 <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
                 <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
               </v-window-item>
 
               <v-window-item value="num_apostado" v-if="mostrarForm">
-                <v-text-field v-model="busca" label="Digite as 10 dezenas" class="w-75 mx-auto" dense></v-text-field>
+                <v-text-field v-model="busca" label="Digite as 10 dezenas" class="w-100 mx-auto" dense></v-text-field>
                 <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
                 <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
               </v-window-item>
 
               <v-window-item value="regiao_id" v-if="mostrarForm">
-                <v-text-field v-model="busca" label="Selecione a cidade" class="w-75 mx-auto" dense></v-text-field>
+                <v-text-field v-model="busca" label="Selecione a cidade" class="w-100 mx-auto" dense></v-text-field>
                 <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
                 <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
               </v-window-item>
@@ -50,26 +59,26 @@
 
           <div class="d-flex justify-center mb-10">
 
-            <v-table class="w-100 rounded-lg bg-fundo">
+            <v-table class="w-100 rounded bg-fundo">
               <thead class="bg-blue">
                 <tr>
-                  <th class="text-center text-white py-6">
+                  <th class="text-caption text-md-h6 text-center text-white py-6 px-1 px-md-3">
                     <h3>Nº Pule</h3>
                   </th>
-                  <th class="text-center text-white">
+                  <th class="text-caption text-md-h6 text-center text-white px-1 px-md-3">
                     <h3>Nome</h3>
                   </th>
-                  <th class="text-center text-white">
+                  <th class="text-caption text-md-h6 text-center text-white px-1 px-md-3">
                     <h3>Cidade</h3>
                   </th>
-                  <th class="text-center text-white">
+                  <th class="text-caption text-md-h6 text-center text-white px-1 px-md-3">
                     <h3>Dezenas Apostadas</h3>
-                    <div class="d-flex justify-center align center">
-                      <v-badge inline color="yellow"></v-badge><span class="pr-4">acertos</span>
+                    <div class="d-flex justify-center align-center" >
+                      <v-badge inline color="yellow"></v-badge><span class="pr-2 pr-md-4">acertos</span>
                       <v-badge inline color="white"></v-badge><span>falta acertar</span>
                     </div>
                   </th>
-                  <th class="text-center text-white">
+                  <th class="text-caption text-md-h6 text-center text-white" v-show="hideAcertos">
                     <h3>Acertos</h3>
                   </th>
                 </tr>
@@ -80,17 +89,22 @@
                   v-for="(apostador, index) in vencedores"
                   :key="apostador.id"
                   :class="{'bg-grey-darken-4' : index % 2 === 0}"
+                  style="overflowx: hidden;"
                 >
-                  <td class="py-8">{{ apostador.num_pule }}</td>
-                  <td>{{ apostador.nome }}</td>
-                  <td>{{ apostador.cidade }}</td>
+                  <td class="py-6 text-caption text-md-subtitle-1 px-2 px-md-auto">{{ apostador.num_pule }}</td>
+                  <td class="text-caption text-md-subtitle-1 px-2 px-md-auto">{{ apostador.nome }}</td>
+                  <td class="text-caption text-md-subtitle-1 px-2 px-md-auto">{{ apostador.cidade }}</td>
                   <td>
                     <div class="d-flex flex-wrap justify-center">
-                      <h4 v-for="(numero) in apostador.num_apostado" :key="numero.id">
+                      <h4
+                        v-for="(numero) in apostador.num_apostado"
+                        :key="numero.id"
+                        class="py-1"
+                      >
                         <span
                           :class="{
-                            'd-inline-block rounded-circle bg-yellow pa-1 ma-1': apostador.num_sorteados.includes(numero),
-                            'd-inline-block rounded-circle bg-white pa-1 ma-1': !apostador.num_sorteados.includes(numero)
+                            'd-inline-block text-caption text-md-subtitle-1 rounded-circle bg-yellow pa-1 ma-1': apostador.num_sorteados.includes(numero),
+                            'd-inline-block text-caption text-md-subtitle-1 rounded-circle bg-white pa-1 ma-1': !apostador.num_sorteados.includes(numero)
                           }"
                         >
                           {{ numero }}
@@ -98,8 +112,8 @@
                       </h4>
                     </div>
                   </td>
-                  <td>
-                    <span class="bg-blue py-2 px-3 rounded-lg font-weight-bold text-h6">
+                  <td  v-show="hideAcertos">
+                    <span class="bg-blue py-2 rounded-lg font-weight-bold text-caption text-md-subtitle-1 px-2 px-md-auto">
                       {{ qtdAcertos(apostador.num_apostado, apostador.num_sorteados)}}
                     </span>
                   </td>
@@ -122,7 +136,8 @@ export default {
       filtros: '',
       busca: '',
       vencedores: [],
-      mostrarForm: false
+      mostrarForm: false,
+      hideAcertos: false
     }
   },
 
@@ -191,7 +206,20 @@ export default {
       this.busca = ''
       this.filtros = ''
       this.getVencedores()
+    },
+
+    checkScreenWidth() {
+      this.hideAcertos = window.innerWidth >= 500
     }
+  },
+
+  mounted() {
+    this.checkScreenWidth()
+    window.addEventListener('resize', this.checkScreenWidth)
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize',this.checkScreenWidth)
   },
 
   created() {
@@ -201,3 +229,12 @@ export default {
 
 }
 </script>
+
+<style scoped>
+@media (min-width: 651px) {
+  br {
+    display: none;
+  }
+}
+
+</style>

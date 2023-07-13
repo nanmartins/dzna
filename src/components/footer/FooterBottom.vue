@@ -1,13 +1,23 @@
 <template>
   <v-row class="pa-0 ma-0 py-10">
-    <v-col cols="3" class="pa-0 ma-0">
+    <!-- <v-col cols="" class="pa-0 ma-0"> -->
+
+      <!-- //////////////////////////////////////// FOOTER LOGO ////////////////////////////////////////// -->
+      <v-col
+        :cols="6"
+        :md="3"
+        :lg="3"
+        :xl="3"
+        :xxl="3"
+        class="py-0 px-0"
+      >
       <v-card flat class="column-left bg-nav">
         <div>
 
           <v-card-title class="px-0 py-0 mb-10 text-h4">Footer</v-card-title>
 
 
-          <div class="d-flex flex-column">
+          <div class="flex-column">
             <v-card-text flat class="px-0 py-2 text-body-2">
               Horário local: {{ liveTime }}
             </v-card-text>
@@ -19,10 +29,10 @@
               <v-img
                 :width="40"
                 inline
-                class="px-0 mx-0"
+                class="px-0 mx-0 mr-2"
                 src="https://res.cloudinary.com/dpskrziq1/image/upload/c_crop/v1687996011/Brazil_pf2dtv.png"
               ></v-img>
-              <v-card-text class="text-h6 px-0 py-0 ma-0 pl-2"
+              <v-card-text class="text-h6 px-0 py-0 ma-0"
                 >Português</v-card-text
               >
             </v-row>
@@ -41,51 +51,104 @@
     </v-col>
 
     <!-- ////// FOOTER BOTTOM - MID ////// -->
-    <v-col min-width="400px" class="pa-0 ma-0">
-      <v-card flat class="column-center bg-nav">
 
-        <v-card-text class="pt-0 text-body-1 text-justify">
+      <!-- <v-col v-if="changeLayout" min-width="400px" class="pa-0 ma-0"> -->
+      <v-col
+        v-if="changeLayout"
+        :cols="6"
+        :md="6"
+        :lg="6"
+        :xl="6"
+        :xxl="6"
+        min-width="400px"
+        class="pa-0 ma-0"
+      >
+
+        <v-card flat class="column-center bg-nav px-0 mx-0">
+
+          <!-- <div v-show="changeLayout"> -->
+
+          <v-card-text class="pt-0 text-md-body-1 text-justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+            delectus praesentium error numquam aut amet laudantium deleniti non
+            dignissimos laboriosam, doloribus dolorem excepturi facilis nesciunt!
+            Ad sunt dolore temporibus eaque?
+          </v-card-text>
+
+          <v-card-text class="text-md-body-1 text-justify">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
+            perspiciatis aliquid veritatis tempora! Dolorum, officia! Ut quo fugit
+            voluptatibus facere maxime ab eaque voluptates, natus dolores
+            voluptas! Quis, aspernatur quasi!
+          </v-card-text>
+
+          <v-card-text class="text-md-body-1 text-justify">
+            Mauris est egestas malesuada gidnissim nam.
+          </v-card-text>
+
+          <!-- </div> -->
+        </v-card>
+
+      </v-col>
+
+    <!-- <v-col cols="3" class="pa-0 ma-0"> -->
+    <v-col
+      :cols="6"
+      :md="3"
+      :lg="3"
+      :xl="3"
+      :xxl="3"
+      min-width="400px"
+      class="pa-0 ma-0"
+    >
+      <v-card flat class="column-right bg-nav" outlined>
+        <div width="250px">
+          <v-card-text class="text-md-h6 text-end pt-0 px-0"
+            >Lorem Ipsum</v-card-text
+          >
+          <v-card-text class="text-md-h6 text-end pt-0 px-0"
+            >Lorem Ipsum</v-card-text
+          >
+          <v-card-text class="text-md-h6 text-end pt-0 px-0"
+            >Lorem Ipsum</v-card-text
+          >
+          <v-card-text class="text-md-h6 text-end pt-0 px-0"
+            >Lorem Ipsum</v-card-text
+          >
+          <v-card-text class="text-md-h6 text-end pt-0 px-0"
+            >Lorem Ipsum</v-card-text
+          >
+        </div>
+      </v-card>
+    </v-col>
+
+
+    <div v-if="!changeLayout" class="mt-4">
+
+      <h3 class="text-center py-4">Sobre Nós</h3>
+
+      <v-card flat class="column-center bg-nav">
+        <v-card-text class="pt-0 text-md-body-1 text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
           delectus praesentium error numquam aut amet laudantium deleniti non
           dignissimos laboriosam, doloribus dolorem excepturi facilis nesciunt!
           Ad sunt dolore temporibus eaque?
         </v-card-text>
 
-        <v-card-text class="text-body-1 text-justify">
+        <v-card-text class="text-md-body-1 text-justify">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
           perspiciatis aliquid veritatis tempora! Dolorum, officia! Ut quo fugit
           voluptatibus facere maxime ab eaque voluptates, natus dolores
           voluptas! Quis, aspernatur quasi!
         </v-card-text>
 
-        <v-card-text class="text-body-1 text-justify">
+        <v-card-text class="text-md-body-1 text-justify">
           Mauris est egestas malesuada gidnissim nam.
         </v-card-text>
 
       </v-card>
-    </v-col>
+    </div>
 
-    <v-col cols="3" class="pa-0 ma-0">
-      <v-card flat class="column-right bg-nav" outlined>
-        <div width="250px">
-          <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0"
-            >Lorem Ipsum</v-card-text
-          >
-          <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0"
-            >Lorem Ipsum</v-card-text
-          >
-          <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0"
-            >Lorem Ipsum</v-card-text
-          >
-          <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0"
-            >Lorem Ipsum</v-card-text
-          >
-          <v-card-text class="d-flex text-h6 justify-end pt-0 pr-0"
-            >Lorem Ipsum</v-card-text
-          >
-        </div>
-      </v-card>
-    </v-col>
   </v-row>
 </template>
 
@@ -95,12 +158,18 @@ export default {
   data() {
     return {
       liveTime: "",
+      changeLayout: false
     };
   },
+
   mounted() {
     this.updateTime();
     setInterval(this.updateTime, 1000);
+
+    this.mobileLayout()
+    window.addEventListener('resize', this.mobileLayout)
   },
+
   methods: {
     updateTime() {
       const date = new Date();
@@ -111,6 +180,22 @@ export default {
         GMT ${-date.getTimezoneOffset() / 60 >= 0 ? " +" : " "}
         ${-date.getTimezoneOffset() / 60} `
     },
+
+    mobileLayout() {
+      this.changeLayout = window.innerWidth >= 960
+    }
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.mobileLayout)
   },
 };
 </script>
+
+<style scoped>
+@media (max-width: 550px) {
+  .change-layout {
+    display: none;
+  }
+}
+</style>

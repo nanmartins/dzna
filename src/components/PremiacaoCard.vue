@@ -5,7 +5,7 @@
       <v-col
         :cols="12"
         :md="12"
-        :lg="8"
+        :lg="12"
         :xl="12"
         :xxl="12"
         class="mx-auto"
@@ -26,7 +26,7 @@
             <span v-else class="bg-green py-1 px-3 rounded ml-2">Ativo</span>
           </h4>
 
-          <h4 class="text-body-1 py-4">
+          <h4 class="text-body-1 text-md-h5 py-4">
             Início do Concurso:
             <span v-if="concurso.tipo_concurso.descricao.includes('Sabádo')"
               >Sábado,
