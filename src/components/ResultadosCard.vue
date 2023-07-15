@@ -3,7 +3,7 @@
     <v-container>
       <v-responsive class="align-center text-center">
 
-        <h1 class="text-h3 font-weight-bold py-10 mt-10">{{ resultados.length }} Resultados</h1>
+        <h1 class="text-h4 text-md-h3 font-weight-bold py-10 mt-md-10">{{ resultados.length }} Resultados</h1>
 
         <div class="d-flex flex-wrap justify-center">
 
