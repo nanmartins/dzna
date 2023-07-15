@@ -16,16 +16,17 @@ import { mdi } from 'vuetify/iconsets/mdi'
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
-    // breakpoints: {
-    //   values: {
-    //     xs: 0,
-    //     sm: 600,
-    //     md: 960,
-    //     lg: 1280,
-    //     xl: 1280,
-    //   },
-    // },
+    defaultTheme: "dark",
     themes: {
+      dark: {
+        colors: {
+          primary: '#1867C0',
+          secondary: '#5CBBF6',
+          fundo: '#1f1b16',
+          nav: '#17130E',
+          contraste: '#28241F'
+        },
+      },
       light: {
         colors: {
           primary: '#1867C0',
