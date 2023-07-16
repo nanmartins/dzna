@@ -3,7 +3,7 @@
     <v-container>
       <v-responsive class="align-center text-center">
 
-        <h1 class="text-h3 font-weight-bold py-10 mt-10">{{ resultados.length }} Resultados</h1>
+        <h1 class="text-h4 text-md-h3 font-weight-bold py-10 mt-md-8">{{ resultados.length }} Resultados</h1>
 
         <div class="d-flex flex-wrap justify-center">
 
@@ -12,7 +12,7 @@
             :key="resultado.id"
             class="d-flex flex-row align-center justify-center"
           >
-            <v-card class="d-flex flex-column ma-2 px-1 bg-grey-darken-3 rounded-lg">
+            <v-card class="d-flex flex-column ma-2 px-1 bg-highlight rounded-lg elevation-4">
 
               <div class="pa-4">
                 <v-card-subtitle class="text-h6">
@@ -24,18 +24,18 @@
                 </v-card-text>
               </div>
 
-              <div class="bg-grey-lighten-3 py-4">
+              <div class="bg-white py-4">
                 <ul v-for="(value, key) in resultado.ranking" :key="key">
                   <h2 class="font-weight-light">{{ key }} - {{ value }}</h2>
                 </ul>
               </div>
 
-              <div class="d-flex flex-wrap justify-center bg-grey-lighten-1">
+              <div class="d-flex flex-wrap justify-center bg-grey-lighten-3">
                 <div v-for="(numero, index) in resultado.num_sorteados" :key="index">
                   <h6 class="text-subtitle-2 pt-2 px-1">{{ numero }}</h6>
                 </div>
               </div>
-              <div class="d-flex justify-center bg-grey-lighten-1 pb-1">
+              <div class="d-flex justify-center bg-grey-lighten-3 pb-1">
                 <h6 class="text-subtitle-1">**{{ resultado.num_ordem}}</h6>
               </div>
 

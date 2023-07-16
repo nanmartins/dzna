@@ -1,27 +1,27 @@
 <template>
-  <div class="bg-fundo">
+  <div class="bg-fundo pb-10">
     <v-container class="text-center px-1 px-md-2">
 
-        <h1 class="text-h4 text-md-3 font-weight-bold py-10 mt-md-10">Filtros</h1>
+        <h1 class="text-h4 text-md-h3 font-weight-bold py-10 mt-md-10">Filtros</h1>
 
-        <v-card class="bg-fundo" flat>
+        <v-card class="bg-fundo pt-4" flat>
 
           <div class="d-flex justify-center flex-colum">
             <v-tabs v-model="filtros">
 
-              <v-tab value="num_pule" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue filtro-btn">
+              <v-tab value="num_pule" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue">
                 Buscar <br> Nº Pule
               </v-tab>
 
-              <v-tab value="apostador_id" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue filtro-btn">
+              <v-tab value="apostador_id" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue">
                 Buscar <br> Apostador
               </v-tab>
 
-              <v-tab value="num_apostado" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue filtro-btn">
+              <v-tab value="num_apostado" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue">
                 Buscar <br> Dezenas
               </v-tab>
 
-              <v-tab value="regiao_id" @click="mostrarForm = true" class="text-caption text-md-h6 mx-md-4 bg-blue filtro-btn">
+              <v-tab value="regiao_id" @click="mostrarForm = true" class="text-caption text-md-h6 mx-md-4 bg-blue">
                 Buscar <br> Cidade
               </v-tab>
 
@@ -57,9 +57,9 @@
             </v-window>
           </v-card-text>
 
-          <div class="d-flex justify-center mb-10">
+          <div class="d-flex justify-center my-2 mx-2">
 
-            <v-table class="w-100 rounded bg-fundo">
+            <v-table class="w-100 rounded bg-fundo elevation-1">
               <thead class="bg-blue">
                 <tr>
                   <th class="text-caption text-md-h6 text-center text-white py-6 px-1 px-md-3">
@@ -88,7 +88,7 @@
                 <tr
                   v-for="(apostador, index) in vencedores"
                   :key="apostador.id"
-                  :class="{'bg-grey-darken-4' : index % 2 === 0}"
+                  :class="{'bg-highlight' : index % 2 === 0}"
                   style="overflowx: hidden;"
                 >
                   <td class="py-6 text-caption text-md-subtitle-1 px-2 px-md-auto">{{ apostador.num_pule }}</td>
@@ -103,8 +103,8 @@
                       >
                         <span
                           :class="{
-                            'd-inline-block text-caption text-md-subtitle-1 rounded-circle bg-yellow pa-1 ma-1': apostador.num_sorteados.includes(numero),
-                            'd-inline-block text-caption text-md-subtitle-1 rounded-circle bg-white pa-1 ma-1': !apostador.num_sorteados.includes(numero)
+                            'd-inline-block text-caption text-md-subtitle-1 rounded-circle bg-yellow elevation-8 pa-1 ma-1': apostador.num_sorteados.includes(numero),
+                            'd-inline-block text-caption text-md-subtitle-1 rounded-circle bg-white elevation-8 pa-1 ma-1': !apostador.num_sorteados.includes(numero)
                           }"
                         >
                           {{ numero }}
@@ -112,8 +112,8 @@
                       </h4>
                     </div>
                   </td>
-                  <td  v-show="hideAcertos">
-                    <span class="bg-blue py-2 rounded-lg font-weight-bold text-caption text-md-subtitle-1 px-2 px-md-auto">
+                  <td v-show="hideAcertos">
+                    <span class="bg-blue rounded-lg font-weight-bold text-caption text-md-subtitle-1 elevation-8 py-2 px-2 px-md-3">
                       {{ qtdAcertos(apostador.num_apostado, apostador.num_sorteados)}}
                     </span>
                   </td>

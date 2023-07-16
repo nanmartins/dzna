@@ -18,7 +18,7 @@
 
 
           <div class="flex-column">
-            <v-card-text flat class="px-0 py-2 text-body-2">
+            <v-card-text flat class="px-0 py-2 text-caption text-md-body-2">
               Horário local: {{ liveTime }}
             </v-card-text>
 
@@ -32,19 +32,20 @@
                 class="px-0 mx-0 mr-2"
                 src="https://res.cloudinary.com/dpskrziq1/image/upload/c_crop/v1687996011/Brazil_pf2dtv.png"
               ></v-img>
-              <v-card-text class="text-h6 px-0 py-0 ma-0"
+              <v-card-text class="text-subtitle-2 text-md-h6 px-0 py-0 ma-0"
                 >Português</v-card-text
               >
             </v-row>
           </div>
 
-          <v-card class="pa-0 ma-0 bg-nav">
-            <v-icon
+          <v-card class="pa-0 ma-0 pl-1 bg-nav">
+            <v-switch label="Switch"></v-switch>
+            <!-- <v-icon
               icon="mdi:mdi-toggle-switch"
               color="yellow-darken-2"
               class="pa-0 ma-0"
               :size="45"
-            ></v-icon>
+            ></v-icon> -->
           </v-card>
         </div>
       </v-card>
@@ -158,7 +159,8 @@ export default {
   data() {
     return {
       liveTime: "",
-      changeLayout: false
+      changeLayout: false,
+      darkTheme: true
     };
   },
 

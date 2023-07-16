@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-list>
-      <router-link to="/" class="text-decoration-none text-grey-lighten-1">
+      <router-link to="/" class="text-decoration-none text-texto">
         <v-list-item
           prepend-icon="mdi:mdi-home"
           title="Inicio"
@@ -9,7 +9,7 @@
         ></v-list-item>
       </router-link>
 
-      <router-link to="/concursos" class="text-decoration-none text-grey-lighten-1">
+      <router-link to="/concursos" class="text-decoration-none text-texto">
         <v-list-item
           prepend-icon="mdi:mdi-calendar"
           title="Concursos"
@@ -17,7 +17,7 @@
         ></v-list-item>
       </router-link>
 
-      <router-link to="/concursos" class="text-decoration-none text-grey-lighten-1">
+      <router-link to="/concursos" class="text-decoration-none text-texto">
         <v-list-item
           prepend-icon="mdi:mdi-minus"
           title="Ganhadores"

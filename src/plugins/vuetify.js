@@ -16,7 +16,7 @@ import { mdi } from 'vuetify/iconsets/mdi'
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
-    defaultTheme: "dark",
+    defaultTheme: "light",
     themes: {
       dark: {
         colors: {
@@ -24,16 +24,21 @@ export default createVuetify({
           secondary: '#5CBBF6',
           fundo: '#1f1b16',
           nav: '#17130E',
-          contraste: '#28241F'
+          contraste: '#28241F',
+          highlight: '#424242',
+          texto: '#eaf4f4'
         },
       },
       light: {
         colors: {
           primary: '#1867C0',
           secondary: '#5CBBF6',
-          fundo: '#1f1b16',
-          nav: '#17130E',
-          contraste: '#28241F'
+          fundo: '#FFFFFF',
+          nav: '#FFF8F4',
+          contraste: '#FFF8F4',
+          highlight: '#FCDEBC',
+          texto: '#363020'
+
         },
       },
     },

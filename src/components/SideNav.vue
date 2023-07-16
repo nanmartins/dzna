@@ -4,7 +4,7 @@
     :rail="rail"
     @click="rail = !rail"
     style="height: fit-content"
-    class="py-4 rounded-be-xl bg-fundo"
+    class="py-4 rounded-be-xl bg-fundo elevation-1"
   >
     <v-list-item
       prepend-icon="mdi:mdi-menu"
