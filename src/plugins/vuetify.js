@@ -14,11 +14,10 @@ import { aliases, fa } from 'vuetify/iconsets/fa'
 import { mdi } from 'vuetify/iconsets/mdi'
 
 
-
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
-    defaultTheme: "light",
+    defaultTheme: 'light',
     themes: {
       dark: {
         colors: {
@@ -36,10 +35,10 @@ export default createVuetify({
         colors: {
           primary: '#1867C0',
           secondary: '#5CBBF6',
-          fundo: '#FFFAFB',
+          fundo: '#FFFFFF',
           nav: '#FFF8F4',
           contraste: '#edf6f7',
-          highlight: '#cacecc',
+          highlight: '#FCF2EA',
           texto: '#363020',
           verde: '#b2fa8f',
         },
