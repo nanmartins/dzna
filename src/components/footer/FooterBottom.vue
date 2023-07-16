@@ -160,7 +160,6 @@ export default {
     return {
       liveTime: "",
       changeLayout: false,
-      darkTheme: true
     };
   },
 
@@ -176,9 +175,7 @@ export default {
     updateTime() {
       const date = new Date();
       this.liveTime = `
-        ${String(date.getHours()).padStart(2, "0")}:
-        ${String(date.getMinutes()).padStart(2, "0")}:
-        ${String(date.getSeconds()).padStart(2, "0")}
+        ${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}:${String(date.getSeconds()).padStart(2, "0")},
         GMT ${-date.getTimezoneOffset() / 60 >= 0 ? " +" : " "}
         ${-date.getTimezoneOffset() / 60} `
     },
