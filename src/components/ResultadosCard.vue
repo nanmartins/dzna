@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-fundo">
+  <div class="bg-fundo mb-10">
     <v-container>
       <v-responsive class="align-center text-center">
 

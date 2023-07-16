@@ -1,12 +1,12 @@
 <template>
   <div class="bg-fundo pb-10">
-    <v-container class="text-center px-1 px-md-2">
+    <v-container class="text-center px-1 px-md-6">
 
-        <h1 class="text-h4 text-md-h3 font-weight-bold py-10 mt-md-10">Filtros</h1>
+        <h1 class="text-h4 text-md-h3 font-weight-bold py-md-4 mt-10">Filtros</h1>
 
         <v-card class="bg-fundo pt-4" flat>
 
-          <div class="d-flex justify-center flex-colum">
+          <div class="d-flex justify-center align-center flex-colum py-4">
             <v-tabs v-model="filtros">
 
               <v-tab value="num_pule" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue">
