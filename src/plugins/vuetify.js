@@ -13,6 +13,8 @@ import { createVuetify } from 'vuetify'
 import { aliases, fa } from 'vuetify/iconsets/fa'
 import { mdi } from 'vuetify/iconsets/mdi'
 
+
+
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
@@ -24,21 +26,22 @@ export default createVuetify({
           secondary: '#5CBBF6',
           fundo: '#1f1b16',
           nav: '#17130E',
-          contraste: '#28241F',
-          highlight: '#424242',
-          texto: '#eaf4f4'
+          contraste: '#212121',
+          highlight: '#171717',
+          texto: '#eaf4f4',
+          verde: '#b2fa8f',
         },
       },
       light: {
         colors: {
           primary: '#1867C0',
           secondary: '#5CBBF6',
-          fundo: '#FFFFFF',
+          fundo: '#FFFAFB',
           nav: '#FFF8F4',
-          contraste: '#FFF8F4',
-          highlight: '#FCDEBC',
-          texto: '#363020'
-
+          contraste: '#edf6f7',
+          highlight: '#cacecc',
+          texto: '#363020',
+          verde: '#b2fa8f',
         },
       },
     },
