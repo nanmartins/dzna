@@ -74,7 +74,7 @@
                   <th class="text-caption text-md-h6 text-center text-white px-1 px-md-3">
                     <h3>Dezenas Apostadas</h3>
                     <div class="d-flex justify-center align-center" >
-                      <v-badge inline color="yellow"></v-badge><span class="pr-2 pr-md-4">acertos</span>
+                      <v-badge inline color="verde"></v-badge><span class="pr-2 pr-md-4">acertos</span>
                       <v-badge inline color="white"></v-badge><span>falta acertar</span>
                     </div>
                   </th>
@@ -103,8 +103,8 @@
                       >
                         <span
                           :class="{
-                            'd-inline-block text-caption text-md-subtitle-1 rounded-circle bg-yellow elevation-8 pa-1 ma-1': apostador.num_sorteados.includes(numero),
-                            'd-inline-block text-caption text-md-subtitle-1 rounded-circle bg-white elevation-8 pa-1 ma-1': !apostador.num_sorteados.includes(numero)
+                            'd-inline-block text-caption font-weight-bold text-md-subtitle-1 rounded-circle bg-verde elevation-8 pa-1 ma-1': apostador.num_sorteados.includes(numero),
+                            'd-inline-block text-caption font-weight-bold text-md-subtitle-1 rounded-circle bg-white elevation-8 pa-1 ma-1': !apostador.num_sorteados.includes(numero)
                           }"
                         >
                           {{ numero }}

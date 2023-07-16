@@ -76,7 +76,7 @@
                 </v-card-title>
 
                 <div
-                  class="d-flex flex-column align-center rounded bg-grey-lighten-3 mx-2 py-12"
+                  class="d-flex flex-column align-center rounded bg-white mx-2 py-12"
                 >
                   <v-card-subtitle class="text-h4 pa-6 font-weight-black">
                     {{ bolao.tipo_bolao }}

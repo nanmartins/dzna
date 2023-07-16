@@ -12,11 +12,14 @@
             :key="resultado.id"
             class="d-flex flex-row align-center justify-center"
           >
-            <v-card class="d-flex flex-column ma-2 px-1 bg-highlight rounded-lg elevation-4">
+            <v-card
+              class="d-flex flex-column ma-2 px-1 bg-highlight rounded-lg elevation-4"
+              style="background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1%, rgba(255, 255, 255, 0.5) 20% 85%, rgba(0, 0, 0, 0.02)"
+            >
 
               <div class="pa-4">
                 <v-card-subtitle class="text-h6">
-                  {{ resultado.descricao}}, {{ resultado.regiao_id}}
+                  {{ resultado.descricao }}, {{ resultado.regiao_id }}
                 </v-card-subtitle>
                 <v-card-title class="text-h5">{{ resultado.dia_apuracao }}, {{ resultado.dt_apuracao }}</v-card-title>
                 <v-card-text class="text-h6 font-weight-bold pb-0">
@@ -26,7 +29,7 @@
 
               <div class="bg-white py-4">
                 <ul v-for="(value, key) in resultado.ranking" :key="key">
-                  <h2 class="font-weight-light">{{ key }} - {{ value }}</h2>
+                  <h2 class="text-h5 font-weight-normal">{{ key }} - {{ value }}</h2>
                 </ul>
               </div>
 
@@ -54,6 +57,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
