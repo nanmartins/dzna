@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-fundo mb-10">
+  <div class="bg-fundo pb-10">
     <v-container class="text-center px-1 px-md-2">
 
         <h1 class="text-h4 text-md-h3 font-weight-bold py-10 mt-md-10">Filtros</h1>
@@ -113,7 +113,7 @@
                     </div>
                   </td>
                   <td v-show="hideAcertos">
-                    <span class="bg-blue py-2 rounded-lg font-weight-bold text-caption text-md-subtitle-1 elevation-8 px-2 px-md-auto">
+                    <span class="bg-blue rounded-lg font-weight-bold text-caption text-md-subtitle-1 elevation-8 py-2 px-2 px-md-3">
                       {{ qtdAcertos(apostador.num_apostado, apostador.num_sorteados)}}
                     </span>
                   </td>

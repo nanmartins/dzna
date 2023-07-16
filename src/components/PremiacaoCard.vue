@@ -51,7 +51,7 @@
                   'flex-column',
                   'mx-2 my-4',
                   'position-relative',
-                  'elevation-12',
+                  'elevation-8',
                   `bg-${this.cores[index]}`,
                 ]"
                 height="480px"

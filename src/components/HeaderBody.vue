@@ -9,7 +9,7 @@
     class="mx-auto"
   >
 
-    <v-app-bar flat color="nav" :height="56">
+    <v-app-bar flat class="bg-nav elevation-1" :height="56">
 
       <v-container
         :height="55"

@@ -25,7 +25,7 @@ export default createVuetify({
           fundo: '#1f1b16',
           nav: '#17130E',
           contraste: '#28241F',
-          highlight: '#0d1821',
+          highlight: '#424242',
           texto: '#eaf4f4'
         },
       },

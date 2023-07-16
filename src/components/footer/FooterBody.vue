@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="py-0 px-0 bg-nav">
+  <v-footer class="py-0 px-0 bg-nav elevation-3">
     <v-container
       class="d-flex justify-center align-center py-0"
     >
