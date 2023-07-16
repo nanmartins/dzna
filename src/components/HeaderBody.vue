@@ -20,17 +20,17 @@
           <v-app-bar-nav-icon
             icon="mdi:mdi-menu"
             @click.stop="drawer = !drawer"
-            class="text-grey-lighten-1"
+            class="text-texto"
           ></v-app-bar-nav-icon>
         </div>
 
-        <router-link to="/" class="text-white text-decoration-none px-6">
-          <v-app-bar-title class="text-grey-lighten-1">Navbar</v-app-bar-title>
+        <router-link to="/" class="text-texto text-decoration-none px-6">
+          <v-app-bar-title>Navbar</v-app-bar-title>
         </router-link>
 
         <v-app-bar-nav-icon
           icon="mdi:mdi-account-circle-outline"
-          class="text-grey-lighten-1"
+          class="text-texto"
         ></v-app-bar-nav-icon>
 
       </v-container>
@@ -41,7 +41,7 @@
       <v-navigation-drawer
       v-model="drawer"
       location="left"
-      class="bg-fundo"
+      class="bg-fundo rounded-be-xl"
       style="height: fit-content"
       temporary
       >

@@ -21,7 +21,7 @@
             <v-img
               color="grey-lighten-1"
               src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687987430/footer-circle_hx4l7p.png"
-              class="text-center align-center text-h5 font-weight-bold"
+              class="text-texto text-center align-center text-h5 font-weight-bold"
               >+18</v-img
             >
           </div>
@@ -42,5 +42,4 @@
 
 <script setup>
 import FooterBottom from "@/components/footer/FooterBottom.vue";
-
 </script>

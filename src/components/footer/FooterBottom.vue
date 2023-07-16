@@ -38,13 +38,14 @@
             </v-row>
           </div>
 
-          <v-card class="pa-0 ma-0 bg-nav">
-            <v-icon
+          <v-card class="pa-0 ma-0 pl-2 bg-nav">
+            <v-switch label="Switch"></v-switch>
+            <!-- <v-icon
               icon="mdi:mdi-toggle-switch"
               color="yellow-darken-2"
               class="pa-0 ma-0"
               :size="45"
-            ></v-icon>
+            ></v-icon> -->
           </v-card>
         </div>
       </v-card>
@@ -158,7 +159,8 @@ export default {
   data() {
     return {
       liveTime: "",
-      changeLayout: false
+      changeLayout: false,
+      darkTheme: true
     };
   },
 

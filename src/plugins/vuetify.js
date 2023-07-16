@@ -24,7 +24,9 @@ export default createVuetify({
           secondary: '#5CBBF6',
           fundo: '#1f1b16',
           nav: '#17130E',
-          contraste: '#28241F'
+          contraste: '#28241F',
+          highlight: '#0d1821',
+          texto: '#eaf4f4'
         },
       },
       light: {
@@ -33,7 +35,10 @@ export default createVuetify({
           secondary: '#5CBBF6',
           fundo: '#FFFFFF',
           nav: '#FFF8F4',
-          contraste: '#28241F'
+          contraste: '#FFF8F4',
+          highlight: '#FCDEBC',
+          texto: '#363020'
+
         },
       },
     },
