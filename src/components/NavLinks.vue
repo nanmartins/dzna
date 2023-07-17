@@ -52,8 +52,5 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'NavLinks'
-}
+<script setup>
 </script>

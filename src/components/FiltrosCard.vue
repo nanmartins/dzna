@@ -129,105 +129,92 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      filtros: '',
-      busca: '',
-      vencedores: [],
-      mostrarForm: false,
-      hideAcertos: false
-    }
-  },
+<script setup>
 
-  computed: {
-    url() {
-      return 'http://localhost:3000/filtros'
-    }
-  },
+import { onBeforeUnmount, onMounted, ref, computed } from 'vue'
 
-  methods: {
-    getVencedores() {
-      fetch(this.url)
-      .then(response => response.json())
-      .then(data => {
-        this.vencedores = data
-        this.ordenarPorAcertos()
-      })
-    },
+const filtros = ref('')
+const busca = ref('')
+const vencedores = ref([])
+const mostrarForm = ref(false)
+const hideAcertos = ref(false)
 
-    qtdAcertos(array, array2) {
-      let contador = 0
-      for (let i = 0; i < array2?.length; i++) {
-        if (array2[i] === array[i]) {
-          contador++
-        }
-      }
-      return contador
-    },
+const url = computed(() => {
+  return 'http://localhost:3000/filtros'
+})
 
-    ordenarPorAcertos() {
-      this.vencedores.sort((x, y) => {
-        const acertosX = this.qtdAcertos(x.num_apostado, x.num_sorteados)
-        const acertosY = this.qtdAcertos(y.num_apostado, y.num_sorteados)
-
-        if (acertosX !== acertosY) {
-          return acertosY - acertosX
-        }
-        else {
-          const nomeX = x.nome.toLowerCase()
-          const nomeY = y.nome.toLowerCase()
-
-          if (nomeX < nomeY) {
-            return -1
-          }
-          else if (nomeX > nomeY) {
-            return 1
-          }
-          else {
-            return 0
-          }
-        }
-      })
-    },
-
-    buscarFiltro() {
-      const urlFiltrada = `${this.url}?q=${this.busca}`
-      fetch(urlFiltrada)
-        .then(response => response.json())
-        .then(data => {
-          this.vencedores = data;
-          this.ordenarPorAcertos()
-        });
-    },
-
-    limparFiltro() {
-      this.busca = ''
-      this.filtros = ''
-      this.getVencedores()
-    },
-
-    checkScreenWidth() {
-      this.hideAcertos = window.innerWidth >= 500
-    }
-  },
-
-  mounted() {
-    this.checkScreenWidth()
-    window.addEventListener('resize', this.checkScreenWidth)
-  },
-
-  beforeDestroy() {
-    window.removeEventListener('resize',this.checkScreenWidth)
-  },
-
-  created() {
-    this.getVencedores()
-    this.limparFiltro()
-  }
-
+const getVencedores = () => {
+  fetch(url.value)
+  .then(response => response.json())
+  .then(data => {
+    vencedores.value = data
+    ordenarPorAcertos()
+  })
 }
+
+const qtdAcertos = (array, array2) => {
+  let contador = 0
+  for (let i = 0; i < array2?.length; i++) {
+    if (array2[i] === array[i]) {
+      contador++
+    }
+  }
+  return contador
+}
+
+const ordenarPorAcertos = () => {
+  vencedores.value.sort((x, y) => {
+    const acertosX = qtdAcertos(x.num_apostado, x.num_sorteados)
+    const acertosY = qtdAcertos(y.num_apostado, y.num_sorteados)
+
+    if (acertosX !== acertosY) {
+      return acertosY - acertosX
+    } else {
+      const nomeX = x.nome.toLowerCase()
+      const nomeY = y.nome.toLowerCase()
+
+      if (nomeX < nomeY) {
+        return -1
+      } else if (nomeX > nomeY) {
+        return 1
+      } else {
+        return 0
+      }
+    }
+  })
+}
+
+const buscarFiltro = () => {
+  const urlFiltrada = `${url.value}?q=${busca.value}`
+  fetch(urlFiltrada)
+    .then(response => response.json())
+    .then(data => {
+      vencedores.value = data
+      ordenarPorAcertos()
+    })
+}
+
+const limparFiltro = () => {
+  busca.value = ''
+  filtros.value = ''
+  getVencedores()
+}
+
+const checkScreenWidth = () => {
+  hideAcertos.value = window.innerWidth >= 500
+}
+
+onMounted(() => {
+  checkScreenWidth()
+  window.addEventListener('resize', checkScreenWidth)
+  getVencedores()
+  limparFiltro()
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkScreenWidth)
+})
+
 </script>
 
 <style scoped>
@@ -236,5 +223,4 @@ export default {
     display: none;
   }
 }
-
 </style>

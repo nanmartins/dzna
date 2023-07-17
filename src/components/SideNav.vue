@@ -21,19 +21,10 @@
   </v-navigation-drawer>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
 import NavLinks from './NavLinks.vue'
 
-export default {
-  name: "SideNav",
-  components: {
-    NavLinks
-  },
-  data() {
-    return {
-      rail: true,
-      drawer: '',
-    }
-  },
-}
+const rail = ref(true)
+const drawer = ref('')
 </script>

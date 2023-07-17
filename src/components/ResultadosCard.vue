@@ -56,28 +56,21 @@
 
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted } from 'vue'
 
-export default {
-  data() {
-    return {
-      resultados: []
-    }
-  },
+const resultados = ref([])
 
-  methods: {
-    getResultados() {
-      fetch("http://localhost:3000/resultados")
-        .then((response) => response.json())
-        .then((data) => {
-          this.resultados = data;
-        });
-    }
-  },
-
-  created() {
-    this.getResultados()
-  }
-
+const getResultados = () => {
+  fetch("http://localhost:3000/resultados")
+    .then((response) => response.json())
+    .then((data) => {
+      resultados.value = data;
+    })
 }
+
+onMounted(() => {
+  getResultados()
+})
+
 </script>
