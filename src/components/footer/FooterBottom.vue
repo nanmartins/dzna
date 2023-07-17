@@ -153,42 +153,36 @@
   </v-row>
 </template>
 
-<script>
-export default {
-  name: "FooterBottom",
-  data() {
-    return {
-      liveTime: "",
-      changeLayout: false,
-    };
-  },
+<script setup>
 
-  mounted() {
-    this.updateTime();
-    setInterval(this.updateTime, 1000);
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-    this.mobileLayout()
-    window.addEventListener('resize', this.mobileLayout)
-  },
+const liveTime = ref('')
+const changeLayout = ref(false)
 
-  methods: {
-    updateTime() {
-      const date = new Date();
-      this.liveTime = `
-        ${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}:${String(date.getSeconds()).padStart(2, "0")},
-        GMT ${-date.getTimezoneOffset() / 60 >= 0 ? " +" : " "}
-        ${-date.getTimezoneOffset() / 60} `
-    },
+const updateTime = () => {
+const date = new Date();
+  liveTime.value = `
+    ${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}:${String(date.getSeconds()).padStart(2, "0")},
+    GMT ${-date.getTimezoneOffset() / 60 >= 0 ? " +" : " "}
+    ${-date.getTimezoneOffset() / 60} `
+}
 
-    mobileLayout() {
-      this.changeLayout = window.innerWidth >= 960
-    }
-  },
+const mobileLayout = () => {
+  changeLayout.value = window.innerWidth >= 960
+}
 
-  beforeDestroy() {
-    window.removeEventListener('resize', this.mobileLayout)
-  },
-};
+onMounted(() => {
+  updateTime()
+  setInterval(updateTime, 1000)
+  mobileLayout()
+  window.addEventListener('resize', mobileLayout)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', mobileLayout)
+})
+
 </script>
 
 <style scoped>

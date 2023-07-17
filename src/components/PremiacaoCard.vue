@@ -52,7 +52,7 @@
                   'mx-2 my-4',
                   'position-relative',
                   'elevation-8',
-                  `bg-${this.cores[index]}`,
+                  `bg-${cores[index]}`
                 ]"
                 height="480px"
                 width="360px"
@@ -120,74 +120,47 @@
   </div>
 </template>
 
-<script>
-
+<script setup>
+import { ref, computed, onMounted } from 'vue'
 import { formatarValor } from '@/helpers.js'
 
-export default {
-  data() {
-    return {
-      concursos: [],
-      cores: ["purple", "indigo", "teal", "pink", "light-blue", "deep-purple-accent-3"],
-      dataHoje:
-        String(new Date().getDate()).padStart(2, 0) +
-        "/" +
-        String(new Date().getMonth()).padStart(2, 0) +
-        "/" +
-        String(new Date().getFullYear()),
-    };
-  },
+const concursos = ref([])
+const cores = ["purple", "indigo", "teal", "pink", "light-blue", "deep-purple-accent-3"]
+const dataHoje = ref('')
 
-  methods: {
-    getConcursos() {
-      fetch("http://localhost:3000/concursos")
-        .then((response) => response.json())
-        .then((data) => {
-          this.concursos = data;
-        });
-    },
+const getConcursos = () => {
+  fetch("http://localhost:3000/concursos")
+    .then(response => response.json())
+    .then(data => {
+      concursos.value = data
+    })
+}
 
-    // formatarValor(valor) {
-    //   const valorNumerico = Number(valor);
-    //   if (!isNaN(valorNumerico)) {
-    //     return valorNumerico.toLocaleString("pt-BR", {
-    //       style: "currency",
-    //       currency: "BRL",
-    //     });
-    //   } else {
-    //     return "";
-    //   }
-    // },
-
-  },
-
-  computed: {
-    totalPremios() {
-      let total = 0;
-      for (const concurso of this.concursos) {
-        const bolao = concurso.bolao;
-        if (bolao && typeof bolao === "object") {
-          for (const key in bolao) {
-            const premio = bolao[key];
-            const valor = Number(premio.premio_bolao);
-            if (!isNaN(valor)) {
-              total += valor;
-            }
-          }
+const totalPremios = computed(() => {
+  let total = 0
+  for (const concurso of concursos.value) {
+    const bolao = concurso.bolao
+    if (bolao && typeof bolao === "object") {
+      for (const key in bolao) {
+        const premio = bolao[key]
+        const valor = Number(premio.premio_bolao)
+        if (!isNaN(valor)) {
+          total += valor
         }
       }
-      return total;
-    },
-
-    formatarValor() {
-      return formatarValor
     }
+  }
+  return total
+})
 
-  },
+onMounted(() => {
+  getConcursos()
+  dataHoje.value = `
+    ${String(new Date().getDate()).padStart(2, '0')}
+    /${String(new Date().getMonth()).padStart(2, '0')}
+    /${String(new Date().getFullYear())}
+  `
+  formatarValor()
+})
 
-  created() {
-    this.getConcursos();
-    this.formatarValor()
-  },
-};
 </script>

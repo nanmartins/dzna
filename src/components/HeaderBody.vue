@@ -52,48 +52,26 @@
   </v-col>
 
 </div>
-
-
 </template>
 
-<script>
+<script setup>
+import { onMounted, ref, computed } from 'vue'
 import NavLinks from './NavLinks.vue'
 
-export default {
-  name: 'HeaderBody',
-  components: {
-    NavLinks
-  },
-  data() {
-    return {
-      drawer: false,
-      clienteWidth: null
-    }
-  },
+const drawer = ref(false)
+const clienteWidth = ref(null)
 
-  methods: {
-    handleResize() {
-      this.clienteWidth = window.innerWidth
-    }
-  },
-
-  mounted() {
-    window.addEventListener('resize', this.handleResize)
-  },
-
-  // beforeUnmount() {
-  //   window.removeEventListener('resize', this.handleResize)
-  // },
-
-  computed: {
-    isMobile() {
-      return this.clienteWidth < 1280
-    }
-  },
-
-  created() {
-    this.handleResize()
-  }
-
+const handleResize = () => {
+  clienteWidth.value = window.innerWidth
 }
+
+const isMobile = computed(() => {
+  return clienteWidth.value < 1280
+})
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+  handleResize()
+})
+
 </script>
