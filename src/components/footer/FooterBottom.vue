@@ -39,7 +39,7 @@
           </div>
 
           <v-card class="pa-0 ma-0 pl-1 bg-nav">
-            <v-switch label="Switch"></v-switch>
+            <v-switch label="Switch" v-model="darkMode" @change="updateTheme"></v-switch>
             <!-- <v-icon
               icon="mdi:mdi-toggle-switch"
               color="yellow-darken-2"
@@ -154,12 +154,26 @@
 </template>
 
 <script setup>
-
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useThemeStore } from '@/store/theme.js'
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 
 const liveTime = ref('')
 const changeLayout = ref(false)
+/////////////////////////////////////////////////////////////////////
+const themeStore = useThemeStore()
+const darkMode = themeStore.darkMode
 
+
+const updateTheme = () => {
+  const theme = darkMode? 'light' : 'dark'
+  themeStore.updateTheme(theme)
+}
+
+watch(darkMode, () => {
+  updateTheme()
+})
+
+/////////////////////////////////////////////////////////////////////
 const updateTime = () => {
 const date = new Date();
   liveTime.value = `
