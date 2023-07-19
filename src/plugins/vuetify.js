@@ -13,11 +13,19 @@ import { createVuetify } from 'vuetify'
 import { aliases, fa } from 'vuetify/iconsets/fa'
 import { mdi } from 'vuetify/iconsets/mdi'
 
+// Theme state
+// import { usePinia } from 'pinia'
+
+// const pinia = usePinia().vuetify
+// const vuetify = pinia.vuetify
+
+// const
+
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
-    defaultTheme: 'light',
+    // defaultTheme: 'light',
     themes: {
       dark: {
         colors: {
