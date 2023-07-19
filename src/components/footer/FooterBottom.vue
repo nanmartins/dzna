@@ -39,13 +39,7 @@
           </div>
 
           <v-card class="pa-0 ma-0 pl-1 bg-nav">
-            <v-switch label="Switch" v-model="darkMode" @change="updateTheme"></v-switch>
-            <!-- <v-icon
-              icon="mdi:mdi-toggle-switch"
-              color="yellow-darken-2"
-              class="pa-0 ma-0"
-              :size="45"
-            ></v-icon> -->
+            <v-switch label="Switch" @click="themeStore.toggleTheme"></v-switch>
           </v-card>
         </div>
       </v-card>
@@ -154,30 +148,17 @@
 </template>
 
 <script setup>
-import { useThemeStore } from '@/store/theme.js'
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
+import { useThemeStore } from '@/store/theme'
 
 const liveTime = ref('')
 const changeLayout = ref(false)
-/////////////////////////////////////////////////////////////////////
 const themeStore = useThemeStore()
-const darkMode = themeStore.darkMode
 
-
-const updateTheme = () => {
-  const theme = darkMode? 'light' : 'dark'
-  themeStore.updateTheme(theme)
-}
-
-watch(darkMode, () => {
-  updateTheme()
-})
-
-/////////////////////////////////////////////////////////////////////
 const updateTime = () => {
 const date = new Date();
   liveTime.value = `
-    ${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}:${String(date.getSeconds()).padStart(2, "0")},
+    ${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}:${String(date.getSeconds()).padStart(2, "0")}
     GMT ${-date.getTimezoneOffset() / 60 >= 0 ? " +" : " "}
     ${-date.getTimezoneOffset() / 60} `
 }

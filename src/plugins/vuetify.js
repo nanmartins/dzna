@@ -16,7 +16,7 @@ import { mdi } from 'vuetify/iconsets/mdi'
 // Theme state
 // import { usePinia } from 'pinia'
 
-// const pinia = usePinia()
+// const pinia = usePinia().vuetify
 // const vuetify = pinia.vuetify
 
 // const
@@ -25,7 +25,7 @@ import { mdi } from 'vuetify/iconsets/mdi'
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
-    defaultTheme: 'dark',
+    // defaultTheme: 'light',
     themes: {
       dark: {
         colors: {
