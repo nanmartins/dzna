@@ -37,11 +37,16 @@
             </v-row>
           </div>
 
+<<<<<<< HEAD
           <v-card class="pa-0 ma-0 bg-nav" flat>
             <div class="d-flex align-center">
               <span class="mr-2">Color</span>
               <v-switch @click="themeStore.toggleTheme" class="d-flex align-center"></v-switch>
             </div>
+=======
+          <v-card class="pa-0 ma-0 pl-1 bg-nav">
+            <v-switch label="Switch" @click="themeStore.toggleTheme"></v-switch>
+>>>>>>> parent of 997fc1c (...)
           </v-card>
         </div>
       </v-card>

@@ -30,7 +30,7 @@
 
         <v-app-bar-nav-icon
           icon="mdi:mdi-account-circle-outline"
-          class="text-texto justify-start"
+          class="text-texto"
         ></v-app-bar-nav-icon>
 
       </v-container>
