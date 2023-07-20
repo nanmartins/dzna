@@ -26,5 +26,5 @@ import { ref } from 'vue'
 import NavLinks from './NavLinks.vue'
 
 const rail = ref(true)
-const drawer = ref('')
+const drawer = ref(null)
 </script>
