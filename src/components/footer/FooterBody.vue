@@ -27,16 +27,13 @@
           </div>
         </v-col>
 
-        <!-- //////////////////////   DIVIDER  ////////////////// -->
-        <v-divider :thickness="2"></v-divider>
+        <v-divider :thickness="2" class="w-100"></v-divider>
 
-        <!-- /////////////////////   FOOTER BOTTOM  ////////////////////// -->
         <FooterBottom />
 
       </v-row>
     </v-container>
 
-    <!-- </v-row> -->
   </v-footer>
 </template>
 
