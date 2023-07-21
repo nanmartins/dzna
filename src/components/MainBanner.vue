@@ -10,7 +10,7 @@
     >
       <v-card height="220px" class="bg-contraste rounded-lg elevation-2">
         <v-card-title
-          class="d-flex align-center justify-center mx-auto my-auto h-100 text-h4 text-lg-h1 bg-contraste"
+          class="d-flex align-center justify-center mx-auto my-auto h-100 text-texto text-h4 text-lg-h1 bg-contraste"
         >
           BANNER
         </v-card-title>

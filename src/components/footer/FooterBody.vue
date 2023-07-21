@@ -3,7 +3,6 @@
     <v-container
       class="d-flex justify-center align-center py-0"
     >
-      <!-- //////////////////////   FOOTER TOP  //////////////////////////// -->
       <v-row class="pa-0 ma-0">
         <v-col class="d-flex flex-fill justify-center py-8">
           <div class="d-flex flex-row pa-0 ma-0">
@@ -27,7 +26,6 @@
           </div>
         </v-col>
 
-        <!-- //////////////////////   DIVIDER  ////////////////// -->
         <v-divider :thickness="2"></v-divider>
 
         <!-- /////////////////////   FOOTER BOTTOM  ////////////////////// -->

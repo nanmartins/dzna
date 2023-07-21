@@ -4,7 +4,7 @@
     :rail="rail"
     @click="rail = !rail"
     style="height: fit-content"
-    class="py-4 rounded-be-xl bg-fundo elevation-1"
+    class="py-4 rounded-be-xl bg-nav text-texto elevation-1"
   >
     <v-list-item
       prepend-icon="mdi:mdi-menu"
@@ -26,5 +26,5 @@ import { ref } from 'vue'
 import NavLinks from './NavLinks.vue'
 
 const rail = ref(true)
-const drawer = ref('')
+const drawer = ref(null)
 </script>

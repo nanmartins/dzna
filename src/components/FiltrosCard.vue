@@ -173,9 +173,12 @@ const ordenarPorAcertos = () => {
       const nomeX = x.nome.toLowerCase()
       const nomeY = y.nome.toLowerCase()
 
-      if (nomeX < nomeY) {
+      const puleX = Number(x.num_pule)
+      const puleY = Number(y.num_pule)
+
+      if (nomeX && puleX < nomeY && puleY) {
         return -1
-      } else if (nomeX > nomeY) {
+      } else if (nomeX && puleX > nomeY && puleY) {
         return 1
       } else {
         return 0
