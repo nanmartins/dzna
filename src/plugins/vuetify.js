@@ -14,11 +14,9 @@ import { aliases, fa } from 'vuetify/iconsets/fa'
 import { mdi } from 'vuetify/iconsets/mdi'
 
 
-
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
-    // defaultTheme: 'light',
     themes: {
       dark: {
         colors: {
@@ -28,7 +26,7 @@ export default createVuetify({
           nav: '#17130E',
           contraste: '#212121',
           highlight: '#171717',
-          texto: '#eaf4f4',
+          texto: '#cad2c5',
           verde: '#b2fa8f',
         },
       },

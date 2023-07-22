@@ -14,10 +14,10 @@
       <v-card flat class="column-left bg-nav">
         <div>
 
-          <v-card-title class="px-0 py-0 mb-10 text-h4">Footer</v-card-title>
+          <v-card-title class="px-0 py-0 mb-10 text-texto text-h4">Footer</v-card-title>
 
           <div class="flex-column">
-            <v-card-text flat class="px-0 py-2 text-caption text-md-body-2">
+            <v-card-text flat class="px-0 py-2 text-caption text-texto text-md-body-2">
               Horário local: {{ liveTime }}
             </v-card-text>
 
@@ -31,17 +31,22 @@
                 class="px-0 mx-0 mr-2"
                 src="https://res.cloudinary.com/dpskrziq1/image/upload/c_crop/v1687996011/Brazil_pf2dtv.png"
               ></v-img>
-              <v-card-text class="text-subtitle-2 text-md-h6 px-0 py-0 ma-0"
+              <v-card-text class="text-subtitle-2 text-texto text-md-h6 px-0 py-0 ma-0"
                 >Português</v-card-text
               >
             </v-row>
           </div>
 
+<<<<<<< HEAD
           <v-card class="pa-0 ma-0 bg-nav" flat>
             <div class="d-flex align-center">
               <span class="mr-2">Color</span>
               <v-switch @click="themeStore.toggleTheme" class="d-flex align-center"></v-switch>
             </div>
+=======
+          <v-card class="pa-0 ma-0 pl-1 bg-nav text-texto">
+            <v-switch label="Switch" @click="themeStore.toggleTheme"></v-switch>
+>>>>>>> 2fbb0b64939a30283306214c1651b5147bc8c006
           </v-card>
         </div>
       </v-card>
@@ -68,16 +73,34 @@
           Ad sunt dolore temporibus eaque?
         </v-card-text>
 
-          <v-card-text class="pt-0 text-md-body-1 text-justify">
+          <v-card-text class="pt-0 text-texto text-md-body-1 text-justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
             delectus praesentium error numquam aut amet laudantium deleniti non
             dignissimos laboriosam, doloribus dolorem excepturi facilis nesciunt!
             Ad sunt dolore temporibus eaque?
           </v-card-text>
 
+<<<<<<< HEAD
       </v-card>
     </v-col>
 
+=======
+          <v-card-text class="text-texto text-md-body-1 text-justify">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
+            perspiciatis aliquid veritatis tempora! Dolorum, officia! Ut quo fugit
+            voluptatibus facere maxime ab eaque voluptates, natus dolores
+            voluptas! Quis, aspernatur quasi!
+          </v-card-text>
+
+          <v-card-text class="text-texto text-md-body-1 text-justify">
+            Mauris est egestas malesuada gidnissim nam.
+          </v-card-text>
+
+        </v-card>
+
+      </v-col>
+
+>>>>>>> 2fbb0b64939a30283306214c1651b5147bc8c006
     <v-col
       :cols="6"
       :md="3"
@@ -89,19 +112,19 @@
     >
       <v-card flat class="column-right bg-nav" outlined>
         <div width="250px">
-          <v-card-text class="text-md-h6 text-end pt-0 px-0"
+          <v-card-text class="text-texto text-md-h6 text-end pt-0 px-0"
             >Lorem Ipsum</v-card-text
           >
-          <v-card-text class="text-md-h6 text-end pt-0 px-0"
+          <v-card-text class="text-texto text-md-h6 text-end pt-0 px-0"
             >Lorem Ipsum</v-card-text
           >
-          <v-card-text class="text-md-h6 text-end pt-0 px-0"
+          <v-card-text class="text-texto text-md-h6 text-end pt-0 px-0"
             >Lorem Ipsum</v-card-text
           >
-          <v-card-text class="text-md-h6 text-end pt-0 px-0"
+          <v-card-text class="text-texto text-md-h6 text-end pt-0 px-0"
             >Lorem Ipsum</v-card-text
           >
-          <v-card-text class="text-md-h6 text-end pt-0 px-0"
+          <v-card-text class="text-texto text-md-h6 text-end pt-0 px-0"
             >Lorem Ipsum</v-card-text
           >
         </div>
@@ -111,24 +134,24 @@
 
     <div v-if="!changeLayout" class="mt-4">
 
-      <h3 class="text-center py-4">Sobre Nós</h3>
+      <h3 class="text-texto text-center py-4">Sobre Nós</h3>
 
       <v-card flat class="column-center bg-nav">
-        <v-card-text class="pt-0 text-md-body-1 text-justify">
+        <v-card-text class="pt-0 text-texto text-md-body-1 text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
           delectus praesentium error numquam aut amet laudantium deleniti non
           dignissimos laboriosam, doloribus dolorem excepturi facilis nesciunt!
           Ad sunt dolore temporibus eaque?
         </v-card-text>
 
-        <v-card-text class="text-md-body-1 text-justify">
+        <v-card-text class="text-texto text-md-body-1 text-justify">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
           perspiciatis aliquid veritatis tempora! Dolorum, officia! Ut quo fugit
           voluptatibus facere maxime ab eaque voluptates, natus dolores
           voluptas! Quis, aspernatur quasi!
         </v-card-text>
 
-        <v-card-text class="text-md-body-1 text-justify">
+        <v-card-text class="text-texto text-md-body-1 text-justify">
           Mauris est egestas malesuada gidnissim nam.
         </v-card-text>
 
