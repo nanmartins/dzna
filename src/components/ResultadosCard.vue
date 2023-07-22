@@ -1,7 +1,7 @@
 <template>
   <div class="bg-fundo pb-10">
     <v-container>
-      <v-responsive class="align-center text-center">
+      <v-responsive class="align-center text-center text-texto">
 
         <h1 class="text-h4 text-md-h3 font-weight-bold py-10 mt-md-8">{{ resultados.length }} Resultados</h1>
 
@@ -14,10 +14,10 @@
           >
             <v-card
               class="d-flex flex-column ma-2 px-1 bg-highlight rounded-lg elevation-4"
+              style="background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1%, rgba(255, 255, 255, 0.5) 20% 85%, rgba(0, 0, 0, 0.02)"
             >
-              <!-- style="background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1%, rgba(255, 255, 255, 0.5) 20% 85%, rgba(0, 0, 0, 0.02)" -->
 
-              <div class="pa-4">
+              <div class="pa-4 text-texto">
                 <v-card-subtitle class="text-h6">
                   {{ resultado.descricao }}, {{ resultado.regiao_id }}
                 </v-card-subtitle>
@@ -42,7 +42,7 @@
                 <h6 class="text-subtitle-1">**{{ resultado.num_ordem}}</h6>
               </div>
 
-              <h6 class="text-center text-subtitle-1 font-weight-bold py-2">Lançado às: {{ resultado.hr_apuracao.slice(0, 5) }}h</h6>
+              <h6 class="text-center text-subtitle-1 text-texto font-weight-bold py-2">Lançado às: {{ resultado.hr_apuracao.slice(0, 5) }}h</h6>
             </v-card>
 
           </div>

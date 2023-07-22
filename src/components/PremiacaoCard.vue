@@ -21,9 +21,9 @@
             Concurso: {{ concurso.id }}
             <span
               v-if="concurso.dt_final <= dataHoje || concurso.desativado === 'true'"
-              class="bg-red text-texto py-1 px-3 rounded ml-2"
+              class="bg-red py-1 px-3 rounded ml-2"
             >Finalizado</span>
-            <span v-else class="bg-green text-texto py-1 px-3 rounded ml-2">Ativo</span>
+            <span v-else class="bg-green py-1 px-3 rounded ml-2">Ativo</span>
           </h4>
 
           <h4 class="text-body-1 text-texto text-md-h5 py-4">
@@ -81,7 +81,7 @@
                   <v-card-subtitle class="text-h4 pa-6 font-weight-black">
                     {{ bolao.tipo_bolao }}
                   </v-card-subtitle>
-                  <v-card-text class="text-subtitle-1 py-2">
+                  <v-card-text class="text-subtitle-1 text py-2">
                     {{ bolao.descricao }}
                   </v-card-text>
                 </div>
@@ -106,6 +106,7 @@
                 <v-card-text
                   v-else
                   class="d-flex align-center text-h5 font-weight-medium"
+                  style="line-height: 35px"
                 >
                   {{ bolao.status }}
                 </v-card-text>
@@ -125,7 +126,7 @@ import { ref, computed, onMounted } from 'vue'
 import { formatarValor } from '@/helpers.js'
 
 const concursos = ref([])
-const cores = ["purple", "indigo", "teal", "pink", "light-blue", "deep-purple-accent-3"]
+const cores = ["purple", "indigo", "teal", "red-darken-3", "light-blue", "deep-purple-accent-3"]
 const dataHoje = ref('')
 
 const getConcursos = () => {

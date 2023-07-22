@@ -61,7 +61,7 @@
     >
       <v-card flat class="column-center bg-nav px-0 mx-0">
 
-        <v-card-text class="pt-0 text-md-body-1 text-justify">
+        <v-card-text class="pt-0 text-texto text-md-body-1 text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
           delectus praesentium error numquam aut amet laudantium deleniti non
           dignissimos laboriosam, doloribus dolorem excepturi facilis nesciunt!
