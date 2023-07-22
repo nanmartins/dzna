@@ -14,8 +14,8 @@
           >
             <v-card
               class="d-flex flex-column ma-2 px-1 bg-highlight rounded-lg elevation-4"
-              style="background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1%, rgba(255, 255, 255, 0.5) 20% 85%, rgba(0, 0, 0, 0.02)"
             >
+              <!-- style="background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1%, rgba(255, 255, 255, 0.5) 20% 85%, rgba(0, 0, 0, 0.02)" -->
 
               <div class="pa-4">
                 <v-card-subtitle class="text-h6">
@@ -44,7 +44,7 @@
 
               <h6 class="text-center text-subtitle-1 font-weight-bold py-2">Lançado às: {{ resultado.hr_apuracao.slice(0, 5) }}h</h6>
             </v-card>
-            <!-- {{ resultado }} -->
+
           </div>
 
         </div>

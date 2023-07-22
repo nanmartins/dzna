@@ -13,20 +13,20 @@
 
         <div v-for="concurso in concursos" :key="concurso.id" class="text-center mx-auto">
           <!-- {{ concurso }} -->
-          <h1 class="text-h4 text-md-h3 font-weight-bold">
+          <h1 class="text-h4 text-md-h3 text-texto font-weight-bold">
             {{ concurso.tipo_concurso.descricao }}
           </h1>
-          <h3 class="text-h6 text-md-h5 font-weight-light mb-6">{{ concurso.tipo_apuracao.descricao }}</h3>
-          <h4 class="text-h6 text-md-h5 font-weight-bold">
+          <h3 class="text-h6 text-md-h5 text-texto font-weight-light mb-6">{{ concurso.tipo_apuracao.descricao }}</h3>
+          <h4 class="text-h6 text-md-h5 text-texto font-weight-bold">
             Concurso: {{ concurso.id }}
             <span
               v-if="concurso.dt_final <= dataHoje || concurso.desativado === 'true'"
-              class="bg-red py-1 px-3 rounded ml-2"
+              class="bg-red text-texto py-1 px-3 rounded ml-2"
             >Finalizado</span>
-            <span v-else class="bg-green py-1 px-3 rounded ml-2">Ativo</span>
+            <span v-else class="bg-green text-texto py-1 px-3 rounded ml-2">Ativo</span>
           </h4>
 
-          <h4 class="text-body-1 text-md-h5 py-4">
+          <h4 class="text-body-1 text-texto text-md-h5 py-4">
             Início do Concurso:
             <span v-if="concurso.tipo_concurso.descricao.includes('Sabádo')"
               >Sábado,
@@ -34,7 +34,7 @@
             {{ concurso.dt_final }} as {{ concurso.hr_inicio.substring(0, 5) }}h
           </h4>
 
-          <h1 class="text-h5 text-md-h3 font-weight-bold py-4">
+          <h1 class="text-h5 text-md-h3 text-texto font-weight-bold py-4">
             {{ formatarValor(totalPremios) }} em
             {{ Object.keys(concurso.bolao).length }} premiações
           </h1>

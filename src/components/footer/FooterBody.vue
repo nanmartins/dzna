@@ -3,19 +3,17 @@
     <v-container
       class="d-flex justify-center align-center py-0"
     >
-      <!-- //////////////////////   FOOTER TOP  //////////////////////////// -->
+
       <v-row class="pa-0 ma-0">
         <v-col class="d-flex flex-fill justify-center py-8">
           <div class="d-flex flex-row pa-0 ma-0">
             <v-img
-              :src="pixLogo()"
-              alt="Pix Logo"
+              src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687985658/footer-pix-logo_mt4hpg.png"
             ></v-img>
-
-            <!-- <v-img
-              :src="require('~/assets/images/footer-pix.png')"
+            <v-img
+              src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687985674/foooter-pix_juit9t.png"
               class="ml-2"
-            ></v-img> -->
+            ></v-img>
           </div>
 
           <div class="d-flex flex-row pa-0 ma-0 ml-8">
@@ -40,8 +38,4 @@
 
 <script setup>
 import FooterBottom from "@/components/footer/FooterBottom.vue";
-
-const pixLogo = () => {
-  return import('@/assets/images/footer-pix-logo.png')
-}
 </script>
