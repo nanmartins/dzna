@@ -37,16 +37,11 @@
             </v-row>
           </div>
 
-<<<<<<< HEAD
           <v-card class="pa-0 ma-0 bg-nav" flat>
             <div class="d-flex align-center">
               <span class="mr-2">Color</span>
               <v-switch @click="themeStore.toggleTheme" class="d-flex align-center"></v-switch>
             </div>
-=======
-          <v-card class="pa-0 ma-0 pl-1 bg-nav text-texto">
-            <v-switch label="Switch" @click="themeStore.toggleTheme"></v-switch>
->>>>>>> 2fbb0b64939a30283306214c1651b5147bc8c006
           </v-card>
         </div>
       </v-card>
@@ -73,34 +68,20 @@
           Ad sunt dolore temporibus eaque?
         </v-card-text>
 
-          <v-card-text class="pt-0 text-texto text-md-body-1 text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            delectus praesentium error numquam aut amet laudantium deleniti non
-            dignissimos laboriosam, doloribus dolorem excepturi facilis nesciunt!
-            Ad sunt dolore temporibus eaque?
-          </v-card-text>
+        <v-card-text class="text-texto text-md-body-1 text-justify">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
+          perspiciatis aliquid veritatis tempora! Dolorum, officia! Ut quo fugit
+          voluptatibus facere maxime ab eaque voluptates, natus dolores
+          voluptas! Quis, aspernatur quasi!
+        </v-card-text>
 
-<<<<<<< HEAD
+        <v-card-text class="text-texto text-md-body-1 text-justify">
+          Mauris est egestas malesuada gidnissim nam.
+        </v-card-text>
+
       </v-card>
     </v-col>
 
-=======
-          <v-card-text class="text-texto text-md-body-1 text-justify">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
-            perspiciatis aliquid veritatis tempora! Dolorum, officia! Ut quo fugit
-            voluptatibus facere maxime ab eaque voluptates, natus dolores
-            voluptas! Quis, aspernatur quasi!
-          </v-card-text>
-
-          <v-card-text class="text-texto text-md-body-1 text-justify">
-            Mauris est egestas malesuada gidnissim nam.
-          </v-card-text>
-
-        </v-card>
-
-      </v-col>
-
->>>>>>> 2fbb0b64939a30283306214c1651b5147bc8c006
     <v-col
       :cols="6"
       :md="3"
