@@ -1,7 +1,6 @@
 <template>
   <div width="100vw" class="bg-fundo">
     <v-container>
-      <!-- <v-responsive class="align-center text-center fill-height"> -->
       <v-col
         :cols="12"
         :md="12"
@@ -12,7 +11,6 @@
       >
 
         <div v-for="concurso in concursos" :key="concurso.id" class="text-center mx-auto">
-          <!-- {{ concurso }} -->
           <h1 class="text-h4 text-md-h3 text-texto font-weight-bold">
             {{ concurso.tipo_concurso.descricao }}
           </h1>
@@ -116,7 +114,6 @@
         </div>
 
       </v-col>
-      <!-- </v-responsive> -->
     </v-container>
   </div>
 </template>
