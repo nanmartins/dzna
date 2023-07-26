@@ -28,10 +28,13 @@
           <v-app-bar-title>Navbar</v-app-bar-title>
         </router-link>
 
-        <v-app-bar-nav-icon
-          icon="mdi:mdi-account-circle-outline"
-          class="text-texto"
-        ></v-app-bar-nav-icon>
+        <div class="d-flex align-center">
+          <ThemeSwitch></ThemeSwitch>
+          <v-app-bar-nav-icon
+            icon="mdi:mdi-account-circle-outline"
+            class="text-texto"
+          ></v-app-bar-nav-icon>
+        </div>
 
       </v-container>
 

@@ -40,7 +40,8 @@
           <v-card class="pa-0 ma-0 bg-nav" flat>
             <div class="d-flex align-center">
               <span class="mr-2">Color</span>
-              <v-switch @click="themeStore.toggleTheme" class="d-flex align-center text-texto"></v-switch>
+              <ThemeSwitch />
+              <!-- <v-switch @click="themeStore.toggleTheme" class="d-flex align-center text-texto"></v-switch> -->
             </div>
           </v-card>
         </div>
@@ -142,13 +143,13 @@
   </v-row>
 </template>
 
+
+
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { useThemeStore } from '@/store/theme'
 
 const liveTime = ref('')
 const changeLayout = ref(false)
-const themeStore = useThemeStore()
 
 const updateTime = () => {
 const date = new Date();
@@ -174,6 +175,8 @@ onBeforeUnmount(() => {
 })
 
 </script>
+
+
 
 <style scoped>
 @media (max-width: 550px) {
