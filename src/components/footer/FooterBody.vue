@@ -9,6 +9,7 @@
             <v-img
               src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687985658/footer-pix-logo_mt4hpg.png"
             ></v-img>
+
             <v-img
               src="https://res.cloudinary.com/dpskrziq1/image/upload/v1687985674/foooter-pix_juit9t.png"
               class="ml-2"
@@ -36,5 +37,8 @@
 </template>
 
 <script setup>
+// import { ref } from 'vue'
 import FooterBottom from "@/components/footer/FooterBottom.vue";
+
+// const pixLogoImg = ref('@/assets/images/footer-pix-logo.png')
 </script>
