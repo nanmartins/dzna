@@ -44,6 +44,7 @@
               <!-- <v-switch @click="themeStore.toggleTheme" class="d-flex align-center text-texto"></v-switch> -->
             </div>
           </v-card>
+
         </div>
       </v-card>
     </v-col>
@@ -136,8 +137,8 @@
         <v-card-text class="text-texto text-md-body-1 text-justify">
           Mauris est egestas malesuada gidnissim nam.
         </v-card-text>
-
       </v-card>
+
     </div>
 
   </v-row>

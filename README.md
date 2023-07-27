@@ -42,3 +42,8 @@ pnpm build
 ### Customize configuration
 
 See [Configuration Reference](https://vitejs.dev/config/).
+
+Vue i18n plugin:
+
+https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n#include
+(Using setup for Vite 4, with automatic import all files at ./src/locales/)
