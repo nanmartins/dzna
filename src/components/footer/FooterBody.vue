@@ -37,8 +37,5 @@
 </template>
 
 <script setup>
-// import { ref } from 'vue'
 import FooterBottom from "@/components/footer/FooterBottom.vue";
-
-// const pixLogoImg = ref('@/assets/images/footer-pix-logo.png')
 </script>
