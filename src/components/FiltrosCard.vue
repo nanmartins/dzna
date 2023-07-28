@@ -9,19 +9,19 @@
           <div class="d-flex justify-center align-center flex-colum py-4">
             <v-tabs v-model="filtros">
 
-              <v-tab value="num_pule" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue">
+              <v-tab value="num_pule" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-primary">
                 Buscar <br> Nº Pule
               </v-tab>
 
-              <v-tab value="apostador_id" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue">
+              <v-tab value="apostador_id" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-primary">
                 Buscar <br> Apostador
               </v-tab>
 
-              <v-tab value="num_apostado" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-blue">
+              <v-tab value="num_apostado" @click="mostrarForm = true" class="text-caption text-md-h6 mr-1 mx-md-4 bg-primary">
                 Buscar <br> Dezenas
               </v-tab>
 
-              <v-tab value="regiao_id" @click="mostrarForm = true" class="text-caption text-md-h6 mx-md-4 bg-blue">
+              <v-tab value="regiao_id" @click="mostrarForm = true" class="text-caption text-md-h6 mx-md-4 bg-primary">
                 Buscar <br> Cidade
               </v-tab>
 
@@ -32,26 +32,26 @@
             <v-window v-model="filtros">
               <v-window-item value="num_pule" v-if="mostrarForm">
                 <v-text-field v-model="busca" name="num_pule" label="Digite o numero da Pule" class="w-100 mx-auto" dense></v-text-field>
-                <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
-                <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
+                <v-btn type="submit" @click="buscarFiltro" class="bg-primary mx-2">Buscar</v-btn>
+                <v-btn type="submit" @click="limparFiltro" class="bg-warning mx-2">Cancelar</v-btn>
               </v-window-item>
 
               <v-window-item value="apostador_id" v-if="mostrarForm">
                 <v-text-field v-model="busca" label="Nome do apostador" class="w-100 mx-auto" dense></v-text-field>
-                <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
-                <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
+                <v-btn type="submit" @click="buscarFiltro" class="bg-primary mx-2">Buscar</v-btn>
+                <v-btn type="submit" @click="limparFiltro" class="bg-warning mx-2">Cancelar</v-btn>
               </v-window-item>
 
               <v-window-item value="num_apostado" v-if="mostrarForm">
                 <v-text-field v-model="busca" label="Digite as 10 dezenas" class="w-100 mx-auto" dense></v-text-field>
-                <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
-                <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
+                <v-btn type="submit" @click="buscarFiltro" class="bg-primary mx-2">Buscar</v-btn>
+                <v-btn type="submit" @click="limparFiltro" class="bg-warning mx-2">Cancelar</v-btn>
               </v-window-item>
 
               <v-window-item value="regiao_id" v-if="mostrarForm">
                 <v-text-field v-model="busca" label="Selecione a cidade" class="w-100 mx-auto" dense></v-text-field>
-                <v-btn type="submit" @click="buscarFiltro" class="bg-blue mx-2">Buscar</v-btn>
-                <v-btn type="submit" @click="limparFiltro" class="bg-red mx-2">Cancelar</v-btn>
+                <v-btn type="submit" @click="buscarFiltro" class="bg-primary mx-2">Buscar</v-btn>
+                <v-btn type="submit" @click="limparFiltro" class="bg-warning mx-2">Cancelar</v-btn>
               </v-window-item>
 
             </v-window>
@@ -60,7 +60,7 @@
           <div class="d-flex justify-center my-2 mx-2">
 
             <v-table class="w-100 rounded bg-fundo elevation-1">
-              <thead class="bg-blue">
+              <thead class="bg-primary">
                 <tr>
                   <th class="text-caption text-md-h6 text-center text-white py-6 px-1 px-md-3">
                     <h3>Nº Pule</h3>
@@ -113,7 +113,7 @@
                     </div>
                   </td>
                   <td v-show="hideAcertos">
-                    <span class="bg-blue rounded-lg font-weight-bold text-caption text-md-subtitle-1 elevation-8 py-2 px-2 px-md-3">
+                    <span class="bg-primary rounded-lg font-weight-bold text-caption text-md-subtitle-1 elevation-8 py-2 px-2 px-md-3">
                       {{ qtdAcertos(apostador.num_apostado, apostador.num_sorteados)}}
                     </span>
                   </td>

@@ -21,6 +21,7 @@ export default createVuetify({
       dark: {
         colors: {
           primary: '#1867C0',
+          warning: '#F44336',
           secondary: '#5CBBF6',
           fundo: '#1f1b16',
           nav: '#17130E',
@@ -33,6 +34,7 @@ export default createVuetify({
       light: {
         colors: {
           primary: '#1867C0',
+          warning: '#F44336',
           secondary: '#5CBBF6',
           fundo: '#FFFFFF',
           nav: '#FFF8F4',
