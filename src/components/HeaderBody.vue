@@ -29,7 +29,7 @@
         </router-link>
 
         <div class="d-flex align-center">
-          <ThemeSwitch></ThemeSwitch>
+          <!-- <ThemeSwitch></ThemeSwitch> -->
           <v-app-bar-nav-icon
             icon="mdi:mdi-account-circle-outline"
             class="text-texto"
