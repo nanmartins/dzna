@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "inicio": "Inicio",
+    "concursos": "Concursos",
+    "ganhadores": "Ganhadores",
+    "regulamento": "Regulamento",
+    "contato": "Contato",
+    "perguntas": "Perguntas frequentes",
+    "entrar": "Entrar"
+  },
+  "footer": {
+    "local-time": "Horário local",
+    "idioma": "Português"
+  }
+}
