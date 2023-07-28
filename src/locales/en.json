@@ -1,4 +1,8 @@
 {
+  "locale": {
+    "br": "Portuguese",
+    "en": "English"
+  },
   "nav": {
     "inicio": "Home",
     "concursos": "Contests",

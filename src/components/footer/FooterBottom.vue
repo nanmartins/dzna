@@ -42,10 +42,14 @@
               ></v-img>
 
               <v-card-text class="text-subtitle-2 text-texto text-md-h6 px-0 py-0 ma-0">
-                {{ $t('footer.idioma') }}
+                <!-- {{ $t('footer.idioma') }} -->
+                <LanguageSwitch />
+
               </v-card-text>
 
+
             </v-row>
+            <!-- <LanguageSwitch /> -->
           </div>
 
           <v-card class="pa-0 ma-0 bg-nav" flat>
@@ -158,12 +162,12 @@
 
 
 <script setup>
+
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import i18n from '@/i18n'
+import LanguageSwitch from '@/components/LanguageSwitch.vue'
 
 const liveTime = ref('')
 const changeLayout = ref(false)
-const currentLanguage = import.meta.env.VITE_DEFAULT_LOCALE
 
 const updateTime = () => {
 const date = new Date();

@@ -24,7 +24,6 @@ export default defineConfig({
       // global import of ./src/locales/ **
       include: [path.resolve(__dirname, './src/locales/**')],
 
-
       // if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
       // compositionOnly: false,
 
