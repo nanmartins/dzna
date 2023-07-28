@@ -17,7 +17,7 @@
               style="background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1%, rgba(255, 255, 255, 0.5) 20% 85%, rgba(0, 0, 0, 0.02)"
             >
 
-              <div class="pa-4 text-texto">
+              <div class="pa-4">
                 <v-card-subtitle class="text-h6">
                   {{ resultado.descricao }}, {{ resultado.regiao_id }}
                 </v-card-subtitle>
@@ -42,7 +42,7 @@
                 <h6 class="text-subtitle-1">**{{ resultado.num_ordem}}</h6>
               </div>
 
-              <h6 class="text-center text-subtitle-1 text-texto font-weight-bold py-2">Lançado às: {{ resultado.hr_apuracao.slice(0, 5) }}h</h6>
+              <h6 class="text-center text-subtitle-1 font-weight-bold py-2">Lançado às: {{ resultado.hr_apuracao.slice(0, 5) }}h</h6>
             </v-card>
 
           </div>

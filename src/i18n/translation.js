@@ -1,4 +1,4 @@
-import i18n from "."
+import i18n from "./index.js"
 
 const Translate = {
   get supportedLocales() {

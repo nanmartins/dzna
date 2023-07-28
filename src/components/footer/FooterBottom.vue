@@ -41,9 +41,11 @@
                 src="https://res.cloudinary.com/dpskrziq1/image/upload/c_scale,h_40,q_50,w_54/v1690516757/usa_mbqhts.jpg"
               ></v-img>
 
-              <v-card-text class="text-subtitle-2 text-texto text-md-h6 px-0 py-0 ma-0">
+              <v-card-text
+                class="text-subtitle-2 text-texto text-md-h6 px-0 py-0 ma-0"
+              >
                 <!-- {{ $t('footer.idioma') }} -->
-                <LanguageSwitch />
+                <LanguageSwitch style="cursor: pointer"></LanguageSwitch>
 
               </v-card-text>
 
@@ -186,6 +188,7 @@ onMounted(() => {
   setInterval(updateTime, 1000)
   mobileLayout()
   window.addEventListener('resize', mobileLayout)
+  // console.log(navigator.language)
 })
 
 onBeforeUnmount(() => {
