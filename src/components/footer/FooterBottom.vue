@@ -18,7 +18,7 @@
 
           <div class="flex-column">
             <v-card-text flat class="px-0 py-2 text-caption text-texto text-md-body-2">
-              Horário local: {{ liveTime }}
+              {{ $t('footer.local-time') }}: {{ liveTime }}
             </v-card-text>
 
             <v-row
@@ -26,15 +26,30 @@
               width="250px"
             >
               <v-img
+                v-if="$t('footer.idioma') === 'Português'"
                 :width="40"
                 inline
                 class="px-0 mx-0 mr-2"
                 src="https://res.cloudinary.com/dpskrziq1/image/upload/c_crop/v1687996011/Brazil_pf2dtv.png"
               ></v-img>
-              <v-card-text class="text-subtitle-2 text-texto text-md-h6 px-0 py-0 ma-0"
-                >Português</v-card-text
-              >
+
+              <v-img
+                v-else
+                :width="42"
+                inline
+                class="px-0 mx-0 mr-2"
+                src="https://res.cloudinary.com/dpskrziq1/image/upload/c_scale,h_40,q_50,w_54/v1690516757/usa_mbqhts.jpg"
+              ></v-img>
+
+              <v-card-text class="text-subtitle-2 text-texto text-md-h6 px-0 py-0 ma-0">
+                <!-- {{ $t('footer.idioma') }} -->
+                <LanguageSwitch />
+
+              </v-card-text>
+
+
             </v-row>
+            <!-- <LanguageSwitch /> -->
           </div>
 
           <v-card class="pa-0 ma-0 bg-nav" flat>
@@ -44,6 +59,7 @@
               <!-- <v-switch @click="themeStore.toggleTheme" class="d-flex align-center text-texto"></v-switch> -->
             </div>
           </v-card>
+
         </div>
       </v-card>
     </v-col>
@@ -136,8 +152,8 @@
         <v-card-text class="text-texto text-md-body-1 text-justify">
           Mauris est egestas malesuada gidnissim nam.
         </v-card-text>
-
       </v-card>
+
     </div>
 
   </v-row>
@@ -146,7 +162,9 @@
 
 
 <script setup>
+
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import LanguageSwitch from '@/components/LanguageSwitch.vue'
 
 const liveTime = ref('')
 const changeLayout = ref(false)

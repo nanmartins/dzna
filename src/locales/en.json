@@ -1,0 +1,19 @@
+{
+  "locale": {
+    "br": "Portuguese",
+    "en": "English"
+  },
+  "nav": {
+    "inicio": "Home",
+    "concursos": "Contests",
+    "ganhadores": "Winners",
+    "regulamento": "Rules",
+    "contato": "Contact",
+    "perguntas": "FAQS",
+    "entrar": "Log in"
+  },
+  "footer": {
+    "local-time": "Local time",
+    "idioma": "English"
+  }
+}
